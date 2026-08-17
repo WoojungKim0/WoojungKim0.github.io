@@ -252,6 +252,7 @@ nav_order: 1
       </div>
 
     </div>
+
   </section>
 
   <div class="wk-details">
@@ -285,6 +286,7 @@ nav_order: 1
         </section>
       {% endif %}
     {% endfor %}
+
   </div>
 </div>
 

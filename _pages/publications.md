@@ -235,59 +235,61 @@ nav_order: 2
     {% endfor %}
   </div>
 
-  {% for section in site.data.research.sections %}
-    <section class="wk-research-section" data-paper-section="{{ section.id }}">
-      <h2>{{ section.title }}</h2>
-      <div class="wk-paper-list">
-        {% for paper in section.papers %}
-          <article class="wk-paper" data-area="{{ paper.area | default: 'finance' }}">
-            <div>
-              <h3 class="wk-paper-title">{{ paper.title }}</h3>
-              <p class="wk-paper-authors">{{ paper.authors }}</p>
-              {% if paper.journal %}
-                <p class="wk-paper-venue">
-                  {{ paper.journal }}
-                  {% if paper.volume %}, {{ paper.volume }}{% endif %}
-                  {% if paper.article %}, {{ paper.article }}{% endif %}
-                  {% if paper.year %}&middot; {{ paper.year }}{% endif %}
-                </p>
-              {% elsif paper.status %}
-                <p class="wk-paper-venue">{{ paper.status }}</p>
-              {% endif %}
-              <div class="wk-paper-links">
-                {% if paper.publisher_url %}<a href="{{ paper.publisher_url }}" target="_blank" rel="noopener noreferrer">Publisher</a>{% endif %}
-                {% if paper.ssrn_url %}<a href="{{ paper.ssrn_url }}" target="_blank" rel="noopener noreferrer">SSRN</a>{% endif %}
-                {% if paper.abstract or paper.abstract_excerpt %}
-                  <button
+{% for section in site.data.research.sections %}
+
+<section class="wk-research-section" data-paper-section="{{ section.id }}">
+<h2>{{ section.title }}</h2>
+<div class="wk-paper-list">
+{% for paper in section.papers %}
+<article class="wk-paper" data-area="{{ paper.area | default: 'finance' }}">
+<div>
+<h3 class="wk-paper-title">{{ paper.title }}</h3>
+<p class="wk-paper-authors">{{ paper.authors }}</p>
+{% if paper.journal %}
+<p class="wk-paper-venue">
+{{ paper.journal }}
+{% if paper.volume %}, {{ paper.volume }}{% endif %}
+{% if paper.article %}, {{ paper.article }}{% endif %}
+{% if paper.year %}&middot; {{ paper.year }}{% endif %}
+</p>
+{% elsif paper.status %}
+<p class="wk-paper-venue">{{ paper.status }}</p>
+{% endif %}
+<div class="wk-paper-links">
+{% if paper.publisher_url %}<a href="{{ paper.publisher_url }}" target="_blank" rel="noopener noreferrer">Publisher</a>{% endif %}
+{% if paper.ssrn_url %}<a href="{{ paper.ssrn_url }}" target="_blank" rel="noopener noreferrer">SSRN</a>{% endif %}
+{% if paper.abstract or paper.abstract_excerpt %}
+<button
                     class="wk-abstract-toggle"
                     type="button"
                     aria-expanded="false"
                     aria-controls="{{ section.id }}-abstract-{{ forloop.index }}"
                   >
-                    Abstract <span class="wk-abstract-chevron" aria-hidden="true">&#9662;</span>
-                  </button>
-                {% elsif paper.abstract_url %}
-                  <a href="{{ paper.abstract_url }}" target="_blank" rel="noopener noreferrer">Abstract</a>
-                {% endif %}
-              </div>
-              {% if paper.abstract or paper.abstract_excerpt %}
-                <div class="wk-paper-abstract" id="{{ section.id }}-abstract-{{ forloop.index }}" hidden>
-                  <p>
-                    {% if paper.abstract %}{{ paper.abstract }}{% else %}{{ paper.abstract_excerpt }}{% endif %}
-                    {% if paper.abstract_url %}
-                      <a href="{{ paper.abstract_url }}" target="_blank" rel="noopener noreferrer">Read the full official abstract.</a>
-                    {% endif %}
-                  </p>
-                </div>
-              {% endif %}
-              {% if paper.note and paper.note != "" %}<p class="wk-paper-note">{{ paper.note }}</p>{% endif %}
-            </div>
-          </article>
-        {% endfor %}
-      </div>
-      <p class="wk-empty" hidden>{{ section.empty_message }}</p>
-    </section>
-  {% endfor %}
+Abstract <span class="wk-abstract-chevron" aria-hidden="true">&#9662;</span>
+</button>
+{% elsif paper.abstract_url %}
+<a href="{{ paper.abstract_url }}" target="_blank" rel="noopener noreferrer">Abstract</a>
+{% endif %}
+</div>
+{% if paper.abstract or paper.abstract_excerpt %}
+<div class="wk-paper-abstract" id="{{ section.id }}-abstract-{{ forloop.index }}" hidden>
+<p>
+{% if paper.abstract %}{{ paper.abstract }}{% else %}{{ paper.abstract_excerpt }}{% endif %}
+{% if paper.abstract_url %}
+<a href="{{ paper.abstract_url }}" target="_blank" rel="noopener noreferrer">Read the full official abstract.</a>
+{% endif %}
+</p>
+</div>
+{% endif %}
+{% if paper.note and paper.note != "" %}<p class="wk-paper-note">{{ paper.note }}</p>{% endif %}
+</div>
+</article>
+{% endfor %}
+</div>
+<p class="wk-empty" hidden>{{ section.empty_message }}</p>
+</section>
+{% endfor %}
+
 </div>
 
 <script>
