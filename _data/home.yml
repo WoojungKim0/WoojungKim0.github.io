@@ -25,23 +25,27 @@ research_interests:
   - Dynamic Portfolio Choice
   - Cross-Asset Markets
 
-education:
-  - period: "2025–Present"
-    degree: "Ph.D. in Artificial Intelligence"
-    institution: "Yonsei University"
-    detail: ""
-    
-  - period: "2023–2025"
-    degree: "M.Eng. in Industrial Engineering"
-    institution: "Yonsei University"
-    detail: ""
-    
-  - period: "2018–2022"
-    degree: "B.S. in Information & Statistics"
-    institution: "Yonsei University - Wonju"
-    detail: ""
+detail_sections:
+  - title: Education
+    items:
+      - period: "2025–Present"
+        title: "Ph.D. in Artificial Intelligence"
+        organization: "Yonsei University"
+        detail: ""
 
-work_experience:
-  - period: "2025.01–2025.03"
-    position: "Quant Research Intern"
-    institution: "QV Labs"
+      - period: "2023–2025"
+        title: "M.Eng. in Industrial Engineering"
+        organization: "Yonsei University"
+        detail: ""
+
+      - period: "2018–2022"
+        title: "B.S. in Information & Statistics"
+        organization: "Yonsei University - Wonju"
+        detail: ""
+
+  - title: Experience
+    items:
+      - period: "2025.01–2025.03"
+        title: "Quant Research Intern"
+        organization: "QV Labs"
+        detail: ""

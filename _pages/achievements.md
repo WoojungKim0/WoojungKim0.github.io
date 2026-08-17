@@ -7,129 +7,97 @@ nav_order: 4
 ---
 
 <style>
-  .wk-achievement-section {
-    margin-bottom: 3.75rem;
+  .wk-achievements {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 0.5rem;
   }
 
-  .wk-achievement-section h2 {
-    margin-bottom: 1.45rem;
+  .wk-achievement-card h2 {
+    margin: 0 0 1.1rem;
     color: var(--global-text-color);
-    font-size: 1.16rem;
-    font-weight: 300;
-    letter-spacing: -0.03em;
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: -0.025em;
   }
 
   .wk-achievement-item {
     display: grid;
-    grid-template-columns: 82px minmax(0, 1fr);
-    gap: 1.2rem;
-    padding: 0.8rem 0;
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 1.25rem;
+    padding: 0.9rem 0;
+  }
+
+  .wk-achievement-item + .wk-achievement-item {
+    border-top: 1px solid var(--global-divider-color);
   }
 
   .wk-achievement-year {
     color: var(--global-text-color-light, #6b7280);
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     font-weight: 300;
   }
 
   .wk-achievement-title {
-    font-size: 0.92rem;
+    margin-bottom: 0.12rem;
+    color: var(--global-text-color);
+    font-size: 0.96rem;
     font-weight: 500;
-    margin-bottom: 0.15rem;
+    letter-spacing: -0.015em;
+    line-height: 1.45;
+  }
+
+  .wk-achievement-title a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .wk-achievement-title a:hover {
+    color: var(--global-theme-color);
   }
 
   .wk-achievement-meta {
     color: var(--global-text-color-light, #6b7280);
-    font-size: 0.8rem;
+    font-size: 0.84rem;
     font-weight: 300;
+    line-height: 1.55;
   }
 
   @media (max-width: 620px) {
     .wk-achievement-item {
       grid-template-columns: 1fr;
-      gap: 0.25rem;
+      gap: 0.2rem;
     }
   }
 </style>
 
-
-<section class="wk-achievement-section">
-
-  <h2>Awards & Honors</h2>
-
-  {% for item in site.data.achievements.awards %}
-
-  <div class="wk-achievement-item">
-
-    <div class="wk-achievement-year">
-      {{ item.year }}
-    </div>
-
-    <div>
-
-      <div class="wk-achievement-title">
-        {{ item.title }}
-      </div>
-
-      <div class="wk-achievement-meta">
-        {{ item.organization }}
-      </div>
-
-      {% if item.detail and item.detail != "" %}
-      <div class="wk-achievement-meta">
-        {{ item.detail }}
-      </div>
-      {% endif %}
-
-    </div>
-
-  </div>
-
+<div class="wk-achievements">
+  {% for section in site.data.achievements.sections %}
+    {% if section.items.size > 0 %}
+      <section class="wk-section-card wk-achievement-card">
+        <h2>{{ section.title }}</h2>
+        <div>
+          {% for item in section.items %}
+            <article class="wk-achievement-item">
+              <div class="wk-achievement-year">{{ item.year }}</div>
+              <div>
+                <div class="wk-achievement-title">
+                  {% if item.url and item.url != "" %}
+                    <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+                  {% else %}
+                    {{ item.title }}
+                  {% endif %}
+                </div>
+                {% if item.organization and item.organization != "" %}
+                  <div class="wk-achievement-meta">{{ item.organization }}</div>
+                {% endif %}
+                {% if item.detail and item.detail != "" %}<div class="wk-achievement-meta">{{ item.detail }}</div>{% endif %}
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
   {% endfor %}
-
-</section>
-
-
-<section class="wk-achievement-section">
-
-  <h2>Patents</h2>
-
-  {% for item in site.data.achievements.patents %}
-
-  <div class="wk-achievement-item">
-
-    <div class="wk-achievement-year">
-      {{ item.year }}
-    </div>
-
-    <div>
-
-      <div class="wk-achievement-title">
-        {{ item.title }}
-      </div>
-
-      {% if item.number and item.number != "" %}
-      <div class="wk-achievement-meta">
-        {{ item.number }}
-      </div>
-      {% endif %}
-
-      {% if item.inventors and item.inventors != "" %}
-      <div class="wk-achievement-meta">
-        {{ item.inventors }}
-      </div>
-      {% endif %}
-
-      {% if item.detail and item.detail != "" %}
-      <div class="wk-achievement-meta">
-        {{ item.detail }}
-      </div>
-      {% endif %}
-
-    </div>
-
-  </div>
-
-  {% endfor %}
-
-</section>
+</div>

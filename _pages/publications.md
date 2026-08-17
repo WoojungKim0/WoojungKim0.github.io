@@ -2,7 +2,6 @@
 layout: page
 title: Research
 permalink: /research/
-description: Research in empirical asset pricing and AI in finance.
 nav: true
 nav_order: 2
 ---
@@ -12,42 +11,35 @@ nav_order: 2
     padding-top: 0.5rem;
   }
 
-  .wk-research-intro {
-    max-width: 720px;
-    margin: 0 0 1.35rem;
-    color: var(--global-text-color-light);
-    font-size: 0.86rem;
-    font-weight: 300;
-    line-height: 1.7;
-  }
-
   .wk-research-filter {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 3rem;
+    gap: 0.55rem;
+    margin: 0 0 3.15rem;
   }
 
   .wk-filter-button {
-    padding: 0.38rem 0.82rem;
+    padding: 0.45rem 0.92rem;
     border: 1px solid var(--global-divider-color, rgba(11, 18, 21, 0.14));
     border-radius: 999px;
-    background: transparent;
+    background: var(--global-bg-color, #fafaf8);
     color: var(--global-text-color, #0b1215);
     font: inherit;
-    font-size: 0.78rem;
-    font-weight: 300;
+    font-size: 0.82rem;
+    font-weight: 400;
     line-height: 1.25;
     cursor: pointer;
     transition:
       border-color 0.16s ease,
       background-color 0.16s ease,
-      color 0.16s ease;
+      color 0.16s ease,
+      transform 0.16s ease;
   }
 
   .wk-filter-button:hover {
     border-color: var(--global-theme-color, #1768ac);
     color: var(--global-theme-color, #1768ac);
+    transform: translateY(-1px);
   }
 
   .wk-filter-button.is-active,
@@ -55,7 +47,7 @@ nav_order: 2
     border-color: var(--global-theme-color, #1768ac);
     background-color: var(--global-theme-color, #1768ac);
     color: #fff;
-    box-shadow: 0 1px 3px rgba(11, 18, 21, 0.08);
+    box-shadow: 0 2px 7px rgba(23, 104, 172, 0.18);
   }
 
   .wk-paper[hidden],
@@ -65,88 +57,96 @@ nav_order: 2
   }
 
   .wk-research-section {
-    margin-bottom: 3.75rem;
+    margin-bottom: 3.5rem;
   }
 
   .wk-research-section h2 {
-    margin: 0 0 1.25rem;
+    margin: 0 0 1.15rem;
     color: var(--global-text-color);
-    font-size: 1.16rem;
-    font-weight: 300;
-    letter-spacing: -0.03em;
+    font-size: 1.22rem;
+    font-weight: 400;
+    letter-spacing: -0.035em;
   }
 
   .wk-paper-list {
     counter-reset: paper;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.85rem;
   }
 
   .wk-paper {
     counter-increment: paper;
     display: grid;
-    grid-template-columns: 46px minmax(0, 1fr);
-    gap: 0.65rem;
-    padding: 1rem 1.1rem;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 0.7rem;
+    padding: 1.15rem 1.25rem;
     border: 1px solid var(--wk-panel-border-color);
-    border-radius: 9px;
+    border-radius: 10px;
     background: var(--wk-panel-bg-color);
     box-shadow: var(--wk-panel-shadow);
     transition:
       border-color 0.16s ease,
       background-color 0.16s ease,
-      box-shadow 0.16s ease;
+      box-shadow 0.16s ease,
+      transform 0.16s ease;
   }
 
   .wk-paper:hover {
-    border-color: var(--global-theme-color);
+    border-color: rgba(23, 104, 172, 0.34);
     background: var(--global-card-bg-color);
-    box-shadow: 0 3px 10px rgba(11, 18, 21, 0.04);
+    box-shadow: 0 5px 16px rgba(11, 18, 21, 0.05);
+    transform: translateY(-1px);
   }
 
   .wk-paper::before {
     content: counter(paper, decimal-leading-zero);
     padding-top: 0.18rem;
-    color: rgba(11, 18, 21, 0.43);
-    font-size: 0.82rem;
+    color: rgba(11, 18, 21, 0.42);
+    font-size: 0.84rem;
     font-weight: 300;
     letter-spacing: 0.06em;
   }
 
   .wk-paper-title {
-    margin: 0 0 0.2rem;
+    margin: 0 0 0.22rem;
     color: var(--global-text-color);
-    font-size: clamp(0.98rem, 2vw, 1.08rem);
+    font-size: clamp(1.02rem, 2vw, 1.12rem);
     font-weight: 600;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
     line-height: 1.4;
   }
 
   .wk-paper-authors,
-  .wk-paper-venue {
+  .wk-paper-venue,
+  .wk-paper-note {
     margin: 0;
-    color: rgba(11, 18, 21, 0.66);
-    font-size: 0.8rem;
+    color: var(--global-text-color-light);
+    font-size: 0.84rem;
     font-weight: 300;
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
   .wk-paper-venue {
     color: var(--global-text-color);
+  }
+
+  .wk-paper-note {
+    margin-top: 0.45rem;
   }
 
   .wk-paper-links {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 0.28rem;
-    font-size: 0.76rem;
-    font-weight: 300;
+    margin-top: 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 400;
   }
 
   .wk-paper-links a,
   .wk-abstract-toggle {
+    padding: 0;
     border: 0;
     background: transparent;
     color: var(--global-theme-color);
@@ -156,19 +156,15 @@ nav_order: 2
     transition: color 0.16s ease;
   }
 
-  .wk-abstract-toggle {
-    padding: 0;
-  }
-
   .wk-paper-links a:hover,
   .wk-abstract-toggle:hover {
     color: var(--global-hover-color);
   }
 
   .wk-paper-links > * + *::before {
-    content: "·";
     padding: 0 0.55rem;
     color: var(--global-text-color-light);
+    content: "·";
   }
 
   .wk-abstract-chevron {
@@ -182,14 +178,15 @@ nav_order: 2
   }
 
   .wk-paper-abstract {
-    max-width: 760px;
-    margin-top: 0.55rem;
-    padding-left: 0.8rem;
-    border-left: 1px solid var(--global-divider-color);
+    max-width: 780px;
+    margin-top: 0.7rem;
+    padding: 0.75rem 0.9rem;
+    border-left: 2px solid var(--global-theme-color);
+    background: rgba(23, 104, 172, 0.035);
     color: var(--global-text-color-light);
-    font-size: 0.76rem;
+    font-size: 0.82rem;
     font-weight: 300;
-    line-height: 1.65;
+    line-height: 1.7;
   }
 
   .wk-paper-abstract p {
@@ -198,101 +195,99 @@ nav_order: 2
 
   .wk-empty {
     margin: 0;
-    padding: 1rem 1.1rem;
+    padding: 1.05rem 1.2rem;
     border: 1px solid var(--wk-panel-border-color);
-    border-radius: 9px;
+    border-radius: 10px;
     background: var(--wk-panel-bg-color);
     box-shadow: var(--wk-panel-shadow);
     color: var(--global-text-color-light);
-    font-size: 0.8rem;
+    font-size: 0.84rem;
     font-weight: 300;
   }
 
   @media (max-width: 560px) {
     .wk-research-filter {
-      margin-bottom: 2.4rem;
+      margin-bottom: 2.5rem;
     }
 
     .wk-paper {
-      grid-template-columns: 34px minmax(0, 1fr);
-      padding: 0.9rem 0.85rem;
+      grid-template-columns: 35px minmax(0, 1fr);
+      padding: 1rem 0.9rem;
     }
 
     .wk-empty {
-      padding: 0.9rem 0.85rem;
+      padding: 1rem 0.9rem;
     }
   }
 </style>
 
 <div class="wk-research">
-  <p class="wk-research-intro">
-    My research centers on empirical asset pricing, factor investing, cross-asset predictability, and machine learning applications in financial
-    markets.
-  </p>
-
   <div class="wk-research-filter" role="group" aria-label="Filter research by field">
-    <button class="wk-filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
-    <button class="wk-filter-button" type="button" data-filter="finance" aria-pressed="false">Finance</button>
-    <button class="wk-filter-button" type="button" data-filter="engineering" aria-pressed="false">Engineering</button>
+    {% for filter in site.data.research.filters %}
+      <button
+        class="wk-filter-button{% if filter.id == 'all' %} is-active{% endif %}"
+        type="button"
+        data-filter="{{ filter.id }}"
+        aria-pressed="{% if filter.id == 'all' %}true{% else %}false{% endif %}"
+      >
+        {{ filter.label }}
+      </button>
+    {% endfor %}
   </div>
 
-  <section class="wk-research-section" data-paper-section="published">
-    <h2>Published Papers</h2>
-    <div class="wk-paper-list">
-      {% for paper in site.data.research.published %}
-        <article class="wk-paper" data-area="{{ paper.area | default: 'finance' }}">
-          <div>
-            <h3 class="wk-paper-title">{{ paper.title }}</h3>
-            <p class="wk-paper-authors">{{ paper.authors }}</p>
-            <p class="wk-paper-venue">
-              {{ paper.journal }}{% if paper.volume %}, {{ paper.volume }}{% endif %}{% if paper.article %}, {{ paper.article }}{% endif %} · {{ paper.year }}
-            </p>
-            <div class="wk-paper-links">
-              {% if paper.publisher_url %}<a href="{{ paper.publisher_url }}" target="_blank" rel="noopener noreferrer">Publisher</a>{% endif %}
-              {% if paper.ssrn_url %}<a href="{{ paper.ssrn_url }}" target="_blank" rel="noopener noreferrer">SSRN</a>{% endif %}
-              {% if paper.abstract %}
-                <button class="wk-abstract-toggle" type="button" aria-expanded="false" aria-controls="published-abstract-{{ forloop.index }}">
-                  Abstract <span class="wk-abstract-chevron" aria-hidden="true">&#9662;</span>
-                </button>
+  {% for section in site.data.research.sections %}
+    <section class="wk-research-section" data-paper-section="{{ section.id }}">
+      <h2>{{ section.title }}</h2>
+      <div class="wk-paper-list">
+        {% for paper in section.papers %}
+          <article class="wk-paper" data-area="{{ paper.area | default: 'finance' }}">
+            <div>
+              <h3 class="wk-paper-title">{{ paper.title }}</h3>
+              <p class="wk-paper-authors">{{ paper.authors }}</p>
+              {% if paper.journal %}
+                <p class="wk-paper-venue">
+                  {{ paper.journal }}
+                  {% if paper.volume %}, {{ paper.volume }}{% endif %}
+                  {% if paper.article %}, {{ paper.article }}{% endif %}
+                  {% if paper.year %}&middot; {{ paper.year }}{% endif %}
+                </p>
+              {% elsif paper.status %}
+                <p class="wk-paper-venue">{{ paper.status }}</p>
               {% endif %}
-            </div>
-            {% if paper.abstract %}
-              <div class="wk-paper-abstract" id="published-abstract-{{ forloop.index }}" hidden><p>{{ paper.abstract }}</p></div>
-            {% endif %}
-          </div>
-        </article>
-      {% endfor %}
-    </div>
-    <p class="wk-empty" hidden>No published papers are listed for this field.</p>
-  </section>
-
-  <section class="wk-research-section" data-paper-section="working">
-    <h2>Working Papers</h2>
-    <div class="wk-paper-list">
-      {% for paper in site.data.research.working %}
-        <article class="wk-paper" data-area="{{ paper.area | default: 'finance' }}">
-          <div>
-            <h3 class="wk-paper-title">{{ paper.title }}</h3>
-            <p class="wk-paper-authors">{{ paper.authors }}</p>
-            {% if paper.status %}<p class="wk-paper-venue">{{ paper.status }}</p>{% endif %}
-            <div class="wk-paper-links">
-              {% if paper.publisher_url %}<a href="{{ paper.publisher_url }}" target="_blank" rel="noopener noreferrer">Publisher</a>{% endif %}
-              {% if paper.ssrn_url %}<a href="{{ paper.ssrn_url }}" target="_blank" rel="noopener noreferrer">SSRN</a>{% endif %}
-              {% if paper.abstract %}
-                <button class="wk-abstract-toggle" type="button" aria-expanded="false" aria-controls="working-abstract-{{ forloop.index }}">
-                  Abstract <span class="wk-abstract-chevron" aria-hidden="true">&#9662;</span>
-                </button>
+              <div class="wk-paper-links">
+                {% if paper.publisher_url %}<a href="{{ paper.publisher_url }}" target="_blank" rel="noopener noreferrer">Publisher</a>{% endif %}
+                {% if paper.ssrn_url %}<a href="{{ paper.ssrn_url }}" target="_blank" rel="noopener noreferrer">SSRN</a>{% endif %}
+                {% if paper.abstract or paper.abstract_excerpt %}
+                  <button
+                    class="wk-abstract-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="{{ section.id }}-abstract-{{ forloop.index }}"
+                  >
+                    Abstract <span class="wk-abstract-chevron" aria-hidden="true">&#9662;</span>
+                  </button>
+                {% elsif paper.abstract_url %}
+                  <a href="{{ paper.abstract_url }}" target="_blank" rel="noopener noreferrer">Abstract</a>
+                {% endif %}
+              </div>
+              {% if paper.abstract or paper.abstract_excerpt %}
+                <div class="wk-paper-abstract" id="{{ section.id }}-abstract-{{ forloop.index }}" hidden>
+                  <p>
+                    {% if paper.abstract %}{{ paper.abstract }}{% else %}{{ paper.abstract_excerpt }}{% endif %}
+                    {% if paper.abstract_url %}
+                      <a href="{{ paper.abstract_url }}" target="_blank" rel="noopener noreferrer">Read the full official abstract.</a>
+                    {% endif %}
+                  </p>
+                </div>
               {% endif %}
+              {% if paper.note and paper.note != "" %}<p class="wk-paper-note">{{ paper.note }}</p>{% endif %}
             </div>
-            {% if paper.abstract %}
-              <div class="wk-paper-abstract" id="working-abstract-{{ forloop.index }}" hidden><p>{{ paper.abstract }}</p></div>
-            {% endif %}
-          </div>
-        </article>
-      {% endfor %}
-    </div>
-    <p class="wk-empty" hidden>No working papers are listed for this field.</p>
-  </section>
+          </article>
+        {% endfor %}
+      </div>
+      <p class="wk-empty" hidden>{{ section.empty_message }}</p>
+    </section>
+  {% endfor %}
 </div>
 
 <script>
@@ -310,11 +305,13 @@ nav_order: 2
       sections.forEach(function (section) {
         const papers = section.querySelectorAll(".wk-paper");
         let visibleCount = 0;
+
         papers.forEach(function (paper) {
           const isVisible = filter === "all" || paper.dataset.area === filter;
           paper.hidden = !isVisible;
           if (isVisible) visibleCount += 1;
         });
+
         section.querySelector(".wk-empty").hidden = visibleCount > 0;
       });
     }

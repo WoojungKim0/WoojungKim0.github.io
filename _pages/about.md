@@ -23,7 +23,9 @@ nav_order: 1
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
-    border-radius: 5px;
+    border: 1px solid var(--wk-panel-border-color);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(11, 18, 21, 0.08);
   }
 
   .wk-name {
@@ -123,11 +125,7 @@ nav_order: 1
   }
 
   .wk-card {
-    padding: 1.45rem 1.6rem;
-    border: 1px solid var(--wk-home-panel-border-color);
-    border-radius: 9px;
-    background: var(--wk-home-panel-bg-color);
-    box-shadow: var(--wk-home-panel-shadow);
+    scroll-margin-top: 5rem;
   }
 
   .wk-card + .wk-card {
@@ -193,10 +191,6 @@ nav_order: 1
       margin-top: 2.75rem;
     }
 
-    .wk-card {
-      padding: 1.2rem;
-    }
-
     .wk-row {
       grid-template-columns: 1fr;
       gap: 0.22rem;
@@ -227,12 +221,26 @@ nav_order: 1
           </a>
         {% endif %}
         {% if site.data.home.links.scholar != "" %}
-          <a class="wk-icon-link" href="{{ site.data.home.links.scholar }}" target="_blank" rel="noopener noreferrer" title="Google Scholar" aria-label="Google Scholar">
+          <a
+            class="wk-icon-link"
+            href="{{ site.data.home.links.scholar }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Google Scholar"
+            aria-label="Google Scholar"
+          >
             <i class="ai ai-google-scholar"></i>
           </a>
         {% endif %}
         {% if site.data.home.links.linkedin != "" %}
-          <a class="wk-icon-link" href="{{ site.data.home.links.linkedin }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+          <a
+            class="wk-icon-link"
+            href="{{ site.data.home.links.linkedin }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="LinkedIn"
+            aria-label="LinkedIn"
+          >
             <i class="fa-brands fa-linkedin-in"></i>
           </a>
         {% endif %}
@@ -247,42 +255,36 @@ nav_order: 1
   </section>
 
   <div class="wk-details">
-    <section class="wk-card">
+    <section class="wk-section-card wk-card">
       <h2>Research Interests</h2>
       <div class="wk-interest-list">
         {% for interest in site.data.home.research_interests %}<span class="wk-interest">{{ interest }}</span>{% endfor %}
       </div>
     </section>
 
-    <section class="wk-card">
-      <h2>Education</h2>
-      {% for item in site.data.home.education %}
-        <div class="wk-row">
-          <div class="wk-period">{{ item.period }}</div>
-          <div>
-            <div class="wk-row-title">{{ item.degree }}</div>
-            <div class="wk-row-subtitle">{{ item.institution }}</div>
-            {% if item.detail and item.detail != "" %}<div class="wk-row-detail">{{ item.detail }}</div>{% endif %}
-          </div>
-        </div>
-      {% endfor %}
-    </section>
-
-    {% if site.data.home.work_experience.size > 0 %}
-      <section class="wk-card">
-        <h2>Experience</h2>
-        {% for item in site.data.home.work_experience %}
-          <div class="wk-row">
-            <div class="wk-period">{{ item.period }}</div>
-            <div>
-              <div class="wk-row-title">{{ item.position }}</div>
-              <div class="wk-row-subtitle">{{ item.institution }}</div>
-              {% if item.detail and item.detail != "" %}<div class="wk-row-detail">{{ item.detail }}</div>{% endif %}
+    {% for section in site.data.home.detail_sections %}
+      {% if section.items.size > 0 %}
+        <section class="wk-section-card wk-card">
+          <h2>{{ section.title }}</h2>
+          {% for item in section.items %}
+            <div class="wk-row">
+              <div class="wk-period">{{ item.period }}</div>
+              <div>
+                <div class="wk-row-title">
+                  {% if item.url and item.url != "" %}
+                    <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+                  {% else %}
+                    {{ item.title }}
+                  {% endif %}
+                </div>
+                <div class="wk-row-subtitle">{{ item.organization }}</div>
+                {% if item.detail and item.detail != "" %}<div class="wk-row-detail">{{ item.detail }}</div>{% endif %}
+              </div>
             </div>
-          </div>
-        {% endfor %}
-      </section>
-    {% endif %}
+          {% endfor %}
+        </section>
+      {% endif %}
+    {% endfor %}
   </div>
 </div>
 

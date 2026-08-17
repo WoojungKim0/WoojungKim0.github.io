@@ -1,16 +1,32 @@
-published:
-  - title: "Prediction of index futures movement using TimeGAN and 3D-CNN: Empirical evidence from Korea and the United States"
-    authors: "Woojung Kim, Jiyoung Jeon, Sanghoe Kim, Minwoo Jang, Heesoo Lee, Sanghyuk Yoo, and Kyong Joo Oh"
-    area: engineering
-    journal: Applied Soft Computing
-    volume: "171"
-    article: "112748"
-    year: "2025"
-    publisher_url: https://doi.org/10.1016/j.asoc.2025.112748
-    abstract: >-
-      This paper develops an algorithmic trading framework for Korean and U.S. index
-      futures by combining TimeGAN-based time-series augmentation with a three-dimensional
-      convolutional neural network. The empirical analysis evaluates its predictive and
-      trading performance across both markets under realistic futures-market conditions.
+filters:
+  - id: all
+    label: All
+  - id: finance
+    label: Finance
+  - id: engineering
+    label: Engineering
 
-working: []
+sections:
+  - id: published
+    title: Published Papers
+    empty_message: No published papers are listed for this field.
+    papers:
+      - title: "Prediction of index futures movement using TimeGAN and 3D-CNN: Empirical evidence from Korea and the United States"
+        authors: "Woojung Kim, Jiyoung Jeon, Sanghoe Kim, Minwoo Jang, Heesoo Lee, Sanghyuk Yoo, and Kyong Joo Oh"
+        area: engineering
+        journal: Applied Soft Computing
+        volume: "171"
+        article: "112748"
+        year: "2025"
+        publisher_url: https://doi.org/10.1016/j.asoc.2025.112748
+        abstract_url: https://www.sciencedirect.com/science/article/abs/pii/S1568494625000596
+        abstract_excerpt: >-
+          Using time-series generative adversarial networks (TimeGAN), we augment
+          time-series data into three dimensions and employ a 3-dimensional convolutional
+          neural network (3DCNN).
+        note: ""
+
+  - id: working
+    title: Working Papers
+    empty_message: No working papers are listed for this field.
+    papers: []
