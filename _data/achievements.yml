@@ -6,7 +6,7 @@ awards:
   #   organization: "Organization"
   #   detail: ""
   - year: "2022"
-    title: "7th Lotte Members Big Data Competition Excellence Award(3rd prize)"
+    title: "7th Lotte Members Big Data Competition Excellence Award (Third Prize)"
     organization: "Lotte Members"
     detail: ""
     
@@ -16,8 +16,7 @@ awards:
     detail: ""
     
   - year: "2021"
-    title: "2021 Big Contest Data Analysis Competition, Futures League Division, Award from the President of the National Information Society Agency (2nd prize)
-"
+    title: "2021 Big Contest Data Analysis Competition, Futures League Division (Second Prize)"
     organization: "Korean National Information Society Agency"
     detail: ""
 
@@ -33,11 +32,9 @@ patents:
   - year: "2026"
     title: "METHOD AND APPARATUS FOR PREDICTING FUTURE MARKET DATA"
     number: "KR 1020240164678"
-    inventors: "Woojung Kim, ..."
     detail: ""
     
   - year: "2025"
     title: "A METHOD FOR PREDICTING THE TREATMENT PROGNOSIS OF SUDDEN SENSORINEURAL HEARING LOSS USING AN ARTIFICIAL INTELLIGENCE MODEL AND THE APPARATUS THEREOF"
     number: "KR 1020230080849"
-    inventors: "Woojung Kim, ..."
     detail: ""

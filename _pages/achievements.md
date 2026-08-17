@@ -8,38 +8,40 @@ nav_order: 4
 
 <style>
   .wk-achievement-section {
-    margin-bottom: 3rem;
+    margin-bottom: 3.75rem;
   }
 
   .wk-achievement-section h2 {
-    font-size: 1.35rem;
-    font-weight: 650;
-    margin-bottom: 1.15rem;
-    padding-bottom: 0.55rem;
-    border-bottom: 1px solid var(--global-divider-color, #e5e7eb);
+    margin-bottom: 1.45rem;
+    color: var(--global-text-color);
+    font-size: 1.16rem;
+    font-weight: 300;
+    letter-spacing: -0.03em;
   }
 
   .wk-achievement-item {
     display: grid;
-    grid-template-columns: 90px minmax(0, 1fr);
+    grid-template-columns: 82px minmax(0, 1fr);
     gap: 1.2rem;
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--global-divider-color, #e5e7eb);
+    padding: 0.8rem 0;
   }
 
   .wk-achievement-year {
     color: var(--global-text-color-light, #6b7280);
-    font-size: 0.93rem;
+    font-size: 0.78rem;
+    font-weight: 300;
   }
 
   .wk-achievement-title {
-    font-weight: 600;
+    font-size: 0.92rem;
+    font-weight: 500;
     margin-bottom: 0.15rem;
   }
 
   .wk-achievement-meta {
     color: var(--global-text-color-light, #6b7280);
-    font-size: 0.93rem;
+    font-size: 0.8rem;
+    font-weight: 300;
   }
 
   @media (max-width: 620px) {

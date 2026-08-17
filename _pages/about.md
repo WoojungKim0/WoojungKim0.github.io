@@ -8,48 +8,69 @@ nav_order: 1
 
 <style>
   .wk-home {
-    padding: 2.5rem 0 4rem;
+    padding: 3.25rem 0 4.5rem;
   }
 
   .wk-hero {
     display: grid;
-    grid-template-columns: minmax(190px, 235px) minmax(0, 1fr);
-    gap: 2.8rem;
-    align-items: center;
-    margin-bottom: 3.5rem;
+    grid-template-columns: minmax(190px, 238px) minmax(0, 1fr);
+    gap: clamp(2.5rem, 6vw, 4.75rem);
+    align-items: start;
   }
 
   .wk-photo img {
+    display: block;
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
-    border-radius: 12px;
-    border: 1px solid var(--global-divider-color, #e5e7eb);
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+    border-radius: 5px;
   }
 
   .wk-name {
-    margin: 0 0 0.4rem;
-    font-size: clamp(2rem, 3.5vw, 2.6rem);
-    line-height: 1.1;
+    margin: -0.25rem 0 0.4rem;
+    color: var(--global-text-color);
+    font-size: clamp(2rem, 4vw, 2.45rem);
     font-weight: 500;
-    letter-spacing: -0.035em;
+    letter-spacing: -0.045em;
+    line-height: 1.1;
   }
 
   .wk-position {
     margin: 0;
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 1.02rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+
+  .wk-position-separator {
+    padding: 0 0.35rem;
+    color: var(--global-text-color-light);
   }
 
   .wk-affiliation {
-    margin: 0.15rem 0 1.2rem;
-    color: var(--global-text-color-light, #6b7280);
+    margin: 0.2rem 0 0;
+    color: var(--global-text-color-light);
+    font-size: 0.86rem;
+  }
+
+  .wk-email {
+    display: inline-block;
+    margin-top: 0.18rem;
+    color: var(--global-theme-color);
+    font-size: 0.82rem;
+    font-weight: 300;
+    text-decoration: none;
+  }
+
+  .wk-email:hover {
+    color: var(--global-hover-color);
   }
 
   .wk-bio {
     max-width: 680px;
-    margin: 0 0 1.35rem;
+    margin: 1.55rem 0 0;
+    font-size: 0.88rem;
+    font-weight: 300;
     line-height: 1.72;
   }
 
@@ -57,345 +78,221 @@ nav_order: 1
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.8rem;
+    gap: 1rem;
+    margin-top: 1rem;
   }
 
   .wk-icon-link {
-    width: auto;
-    height: auto;
-    padding: 0.2rem 0.25rem;
-    border: 0;
-    border-radius: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none !important;
     color: var(--global-theme-color);
-    background: transparent;
-    transition: opacity 0.18s ease;
+    text-decoration: none !important;
+    transition:
+      color 0.16s ease,
+      transform 0.16s ease;
   }
 
   .wk-icon-link:hover {
-    color: var(--global-theme-color);
-    opacity: 0.65;
+    color: var(--global-hover-color);
+    transform: translateY(-1px);
   }
 
   .wk-icon-link i {
-    font-size: 1.15rem;
+    font-size: 1rem;
   }
 
-  .wk-sections {
-    display: grid;
-    gap: 1.15rem;
+  .wk-interests {
+    margin-top: 1.35rem;
   }
 
-  .wk-card {
-    border: 1px solid var(--global-divider-color, #e5e7eb);
-    border-radius: 12px;
-    padding: 1.45rem 1.6rem;
-    background: var(--global-card-bg-color, var(--global-bg-color, #ffffff));
-  }
-
-  .wk-card h2 {
-    margin: 0 0 1.05rem;
-    font-size: 1.2rem;
-    font-weight: 650;
-    letter-spacing: -0.01em;
+  .wk-interests h2 {
+    margin: 0 0 0.4rem;
+    font-size: 0.86rem;
+    font-weight: 400;
   }
 
   .wk-interest-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.55rem;
+    margin: 0;
+    color: var(--global-text-color);
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.65;
   }
 
-  .wk-interest {
-    display: inline-block;
-    padding: 0.4rem 0.72rem;
-    border-radius: 999px;
-    border: 1px solid var(--global-divider-color, #e5e7eb);
-    font-size: 0.93rem;
+  .wk-interest + .wk-interest::before {
+    content: "·";
+    padding: 0 0.55rem;
+    color: var(--global-text-color-light);
+  }
+
+  .wk-details {
+    margin-top: 4.25rem;
+  }
+
+  .wk-section {
+    margin-bottom: 3.2rem;
+  }
+
+  .wk-section h2 {
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px solid var(--global-divider-color);
+    font-size: 1.08rem;
+    font-weight: 300;
+    letter-spacing: -0.025em;
   }
 
   .wk-row {
     display: grid;
     grid-template-columns: 125px minmax(0, 1fr);
     gap: 1rem;
-    padding: 0.9rem 0;
-    border-top: 1px solid var(--global-divider-color, #e5e7eb);
+    padding: 0.85rem 0;
   }
 
-  .wk-row:first-of-type {
-    border-top: 0;
-    padding-top: 0;
+  .wk-row + .wk-row {
+    border-top: 1px solid var(--global-divider-color);
   }
 
-  .wk-row:last-of-type {
-    padding-bottom: 0;
-  }
-
-  .wk-period {
-    font-size: 0.92rem;
-    color: var(--global-text-color-light, #6b7280);
+  .wk-period,
+  .wk-row-detail {
+    color: var(--global-text-color-light);
+    font-size: 0.78rem;
   }
 
   .wk-row-title {
-    font-weight: 600;
     margin-bottom: 0.08rem;
+    font-size: 0.91rem;
+    font-weight: 500;
   }
 
   .wk-row-subtitle {
-    margin-bottom: 0.12rem;
-  }
-
-  .wk-row-detail {
-    color: var(--global-text-color-light, #6b7280);
-    font-size: 0.93rem;
+    font-size: 0.84rem;
+    font-weight: 300;
   }
 
   @media (max-width: 720px) {
     .wk-home {
-      padding-top: 1.3rem;
+      padding-top: 1.8rem;
     }
 
     .wk-hero {
       grid-template-columns: 1fr;
-      gap: 1.5rem;
-      text-align: center;
+      gap: 1.8rem;
     }
 
     .wk-photo {
-      max-width: 190px;
-      margin: 0 auto;
+      width: min(210px, 68vw);
     }
 
-    .wk-bio {
-      text-align: left;
-      margin-left: auto;
-      margin-right: auto;
+    .wk-position-separator {
+      display: block;
+      height: 0;
+      overflow: hidden;
     }
 
-    .wk-links {
-      justify-content: center;
+    .wk-details {
+      margin-top: 3.25rem;
     }
 
     .wk-row {
       grid-template-columns: 1fr;
-      gap: 0.25rem;
+      gap: 0.22rem;
     }
   }
 </style>
 
 <div class="wk-home">
-
   <section class="wk-hero">
-
     <div class="wk-photo">
-      <img
-        src="{{ '/assets/img/prof_pic.jpg' | relative_url | bust_file_cache }}"
-        alt="{{ site.data.home.name }}"
-      >
+      <img src="{{ '/assets/img/prof_pic.jpg' | relative_url | bust_file_cache }}" alt="{{ site.data.home.name }}">
     </div>
 
     <div class="wk-intro">
-
       <h1 class="wk-name">{{ site.data.home.name }}</h1>
-
       <p class="wk-position">
-        {{ site.data.home.position }}
+        {{ site.data.home.position }}<span class="wk-position-separator" aria-hidden="true">·</span>{{ site.data.home.research_focus }}
       </p>
+      <p class="wk-affiliation">{{ site.data.home.affiliation }}</p>
+      <a class="wk-email" href="mailto:{{ site.data.home.links.email }}">{{ site.data.home.links.email }}</a>
 
-      <p class="wk-affiliation">
-        {{ site.data.home.affiliation }}
-      </p>
+      <p class="wk-bio">{{ site.data.home.bio }}</p>
 
-      <p class="wk-bio">
-        {{ site.data.home.bio }}
-      </p>
-
-      <div class="wk-links">
-
-        {% if site.data.home.links.email != "" %}
-        <a
-          class="wk-icon-link"
-          href="mailto:{{ site.data.home.links.email }}"
-          title="Email"
-          aria-label="Email"
-        >
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-        {% endif %}
-
+      <div class="wk-links" aria-label="Academic and professional profiles">
         {% if site.data.home.links.cv != "" %}
-        <a
-          class="wk-icon-link"
-          href="{{ site.data.home.links.cv | relative_url }}"
-          title="Download CV"
-          aria-label="Download CV"
-          download
-        >
-          <i class="fa-solid fa-file-pdf"></i>
-        </a>
+          <a class="wk-icon-link" href="{{ site.data.home.links.cv | relative_url }}" title="Curriculum Vitae" aria-label="Curriculum Vitae">
+            <i class="fa-solid fa-file-pdf"></i>
+          </a>
         {% endif %}
-
         {% if site.data.home.links.scholar != "" %}
-        <a
-          class="wk-icon-link"
-          href="{{ site.data.home.links.scholar }}"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Google Scholar"
-          aria-label="Google Scholar"
-        >
-          <i class="ai ai-google-scholar"></i>
-        </a>
+          <a class="wk-icon-link" href="{{ site.data.home.links.scholar }}" target="_blank" rel="noopener noreferrer" title="Google Scholar" aria-label="Google Scholar">
+            <i class="ai ai-google-scholar"></i>
+          </a>
         {% endif %}
-
         {% if site.data.home.links.linkedin != "" %}
-        <a
-          class="wk-icon-link"
-          href="{{ site.data.home.links.linkedin }}"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="LinkedIn"
-          aria-label="LinkedIn"
-        >
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
+          <a class="wk-icon-link" href="{{ site.data.home.links.linkedin }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
         {% endif %}
-
         {% if site.data.home.links.ssrn != "" %}
-        <a
-          class="wk-icon-link"
-          href="{{ site.data.home.links.ssrn }}"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="SSRN"
-          aria-label="SSRN"
-        >
-          <i class="fa-solid fa-file-lines"></i>
-        </a>
+          <a class="wk-icon-link" href="{{ site.data.home.links.ssrn }}" target="_blank" rel="noopener noreferrer" title="SSRN" aria-label="SSRN">
+            <i class="fa-solid fa-file-lines"></i>
+          </a>
         {% endif %}
-
       </div>
 
+      <div class="wk-interests">
+        <h2>Research Interests</h2>
+        <p class="wk-interest-list">
+          {% for interest in site.data.home.research_interests %}<span class="wk-interest">{{ interest }}</span>{% endfor %}
+        </p>
+      </div>
     </div>
-
   </section>
 
-
-  <div class="wk-sections">
-
-    <section class="wk-card">
-
-      <h2>Research Interests</h2>
-
-      <div class="wk-interest-list">
-
-        {% for interest in site.data.home.research_interests %}
-          <span class="wk-interest">{{ interest }}</span>
-        {% endfor %}
-
-      </div>
-
-    </section>
-
-
-    <section class="wk-card">
-
+  <div class="wk-details">
+    <section class="wk-section">
       <h2>Education</h2>
-
       {% for item in site.data.home.education %}
-
-      <div class="wk-row">
-
-        <div class="wk-period">
-          {{ item.period }}
+        <div class="wk-row">
+          <div class="wk-period">{{ item.period }}</div>
+          <div>
+            <div class="wk-row-title">{{ item.degree }}</div>
+            <div class="wk-row-subtitle">{{ item.institution }}</div>
+            {% if item.detail and item.detail != "" %}<div class="wk-row-detail">{{ item.detail }}</div>{% endif %}
+          </div>
         </div>
-
-        <div>
-
-          <div class="wk-row-title">
-            {{ item.degree }}
-          </div>
-
-          <div class="wk-row-subtitle">
-            {{ item.institution }}
-          </div>
-
-          {% if item.detail and item.detail != "" %}
-          <div class="wk-row-detail">
-            {{ item.detail }}
-          </div>
-          {% endif %}
-
-        </div>
-
-      </div>
-
       {% endfor %}
-
     </section>
-
 
     {% if site.data.home.work_experience.size > 0 %}
-
-    <section class="wk-card">
-
-      <h2>Work Experience</h2>
-
-      {% for item in site.data.home.work_experience %}
-
-      <div class="wk-row">
-
-        <div class="wk-period">
-          {{ item.period }}
-        </div>
-
-        <div>
-
-          <div class="wk-row-title">
-            {{ item.position }}
+      <section class="wk-section">
+        <h2>Experience</h2>
+        {% for item in site.data.home.work_experience %}
+          <div class="wk-row">
+            <div class="wk-period">{{ item.period }}</div>
+            <div>
+              <div class="wk-row-title">{{ item.position }}</div>
+              <div class="wk-row-subtitle">{{ item.institution }}</div>
+              {% if item.detail and item.detail != "" %}<div class="wk-row-detail">{{ item.detail }}</div>{% endif %}
+            </div>
           </div>
-
-          <div class="wk-row-subtitle">
-            {{ item.institution }}
-          </div>
-
-          {% if item.detail and item.detail != "" %}
-          <div class="wk-row-detail">
-            {{ item.detail }}
-          </div>
-          {% endif %}
-
-        </div>
-
-      </div>
-
-      {% endfor %}
-
-    </section>
-
+        {% endfor %}
+      </section>
     {% endif %}
-
   </div>
-
 </div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const navContainer =
-      document.querySelector("nav.navbar .container") ||
-      document.querySelector("header nav .container") ||
-      document.querySelector("nav .container");
+      document.querySelector("nav.navbar .container") || document.querySelector("header nav .container") || document.querySelector("nav .container");
 
     if (navContainer && !navContainer.querySelector(".navbar-brand")) {
       const brand = document.createElement("a");
-
       brand.className = "navbar-brand wk-navbar-brand";
       brand.href = "{{ '/' | relative_url }}";
       brand.textContent = "Woojung Kim";
-
       navContainer.prepend(brand);
     }
   });

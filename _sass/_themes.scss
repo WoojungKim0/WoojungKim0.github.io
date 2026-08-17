@@ -1,6 +1,11 @@
 html[data-theme="light"] {
-  --global-theme-color: #2f80c9;
-  --global-hover-color: #216aa8;
+  --global-bg-color: #fafaf8;
+  --global-card-bg-color: #fafaf8;
+  --global-text-color: #0b1215;
+  --global-text-color-light: rgba(11, 18, 21, 0.62);
+  --global-divider-color: rgba(11, 18, 21, 0.14);
+  --global-theme-color: #1768ac;
+  --global-hover-color: #0f426c;
   --global-hover-text-color: #ffffff;
 }
 

@@ -1,6 +1,7 @@
 name: Woojung Kim
 
 position: Ph.D. Student in Artificial Intelligence
+research_focus: Empirical Asset Pricing
 affiliation: Yonsei University
 
 bio: >-
@@ -32,16 +33,16 @@ education:
     detail: ""
     
   - period: "2023–2025"
-    degree: "MEng. in Industrial Engineering"
+    degree: "M.Eng. in Industrial Engineering"
     institution: "Yonsei University"
     detail: ""
     
   - period: "2018–2022"
-    degree: "BS. in Information & Statistics"
+    degree: "B.S. in Information & Statistics"
     institution: "Yonsei University - Wonju"
     detail: ""
 
 work_experience:
   - period: "2025.01–2025.03"
-    position: "Intership of Quant Researcher"
+    position: "Quant Research Intern"
     institution: "QV Labs"
