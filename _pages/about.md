@@ -30,9 +30,9 @@ nav_order: 1
 
   .wk-name {
     margin: 0 0 0.4rem;
-    font-size: clamp(2.1rem, 4vw, 3rem);
+    font-size: clamp(2rem, 3.5vw, 2.6rem);
     line-height: 1.1;
-    font-weight: 650;
+    font-weight: 500;
     letter-spacing: -0.035em;
   }
 
@@ -57,28 +57,27 @@ nav_order: 1
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.65rem;
+    gap: 0.8rem;
   }
 
   .wk-icon-link {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid var(--global-divider-color, #e5e7eb);
+    width: auto;
+    height: auto;
+    padding: 0.2rem 0.25rem;
+    border: 0;
+    border-radius: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     text-decoration: none !important;
-    color: var(--global-text-color, #1f2937);
-    background: var(--global-bg-color, #ffffff);
-    transition: transform 0.18s ease, border-color 0.18s ease,
-      color 0.18s ease;
+    color: var(--global-theme-color);
+    background: transparent;
+    transition: opacity 0.18s ease;
   }
 
   .wk-icon-link:hover {
-    transform: translateY(-2px);
-    border-color: var(--global-theme-color, #2563eb);
-    color: var(--global-theme-color, #2563eb);
+    color: var(--global-theme-color);
+    opacity: 0.65;
   }
 
   .wk-icon-link i {
