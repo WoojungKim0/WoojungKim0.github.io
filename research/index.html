@@ -74,15 +74,22 @@
     counter-increment: paper;
     display: grid;
     grid-template-columns: 46px minmax(0, 1fr);
-    gap: 0.5rem;
-    margin: 0 -0.25rem;
-    padding: 0.75rem 0.25rem;
-    border-radius: 4px;
-    transition: background-color 0.16s ease;
+    gap: 0.65rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--wk-panel-border-color);
+    border-radius: 9px;
+    background: var(--wk-panel-bg-color);
+    box-shadow: var(--wk-panel-shadow);
+    transition:
+      border-color 0.16s ease,
+      background-color 0.16s ease,
+      box-shadow 0.16s ease;
   }
 
   .wk-paper:hover {
-    background: rgba(11, 18, 21, 0.025);
+    border-color: var(--global-theme-color);
+    background: var(--global-card-bg-color);
+    box-shadow: 0 3px 10px rgba(11, 18, 21, 0.04);
   }
 
   .wk-paper::before {
@@ -177,7 +184,12 @@
   }
 
   .wk-empty {
-    margin: 0.25rem 0 0 46px;
+    margin: 0;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--wk-panel-border-color);
+    border-radius: 9px;
+    background: var(--wk-panel-bg-color);
+    box-shadow: var(--wk-panel-shadow);
     color: var(--global-text-color-light);
     font-size: 0.8rem;
     font-weight: 300;
@@ -190,10 +202,11 @@
 
     .wk-paper {
       grid-template-columns: 34px minmax(0, 1fr);
+      padding: 0.9rem 0.85rem;
     }
 
     .wk-empty {
-      margin-left: 34px;
+      padding: 0.9rem 0.85rem;
     }
   }
 </style> <div class="wk-research"> <p class="wk-research-intro"> My research centers on empirical asset pricing, factor investing, cross-asset predictability, and machine learning applications in financial markets. </p> <div class="wk-research-filter" role="group" aria-label="Filter research by field"> <button class="wk-filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button> <button class="wk-filter-button" type="button" data-filter="finance" aria-pressed="false">Finance</button> <button class="wk-filter-button" type="button" data-filter="engineering" aria-pressed="false">Engineering</button> </div> <section class="wk-research-section" data-paper-section="published"> <h2>Published Papers</h2> <div class="wk-paper-list"> <article class="wk-paper" data-area="engineering"> <div> <h3 class="wk-paper-title">Prediction of index futures movement using TimeGAN and 3D-CNN: Empirical evidence from Korea and the United States</h3> <p class="wk-paper-authors">Woojung Kim, Jiyoung Jeon, Sanghoe Kim, Minwoo Jang, Heesoo Lee, Sanghyuk Yoo, and Kyong Joo Oh</p> <p class="wk-paper-venue"> Applied Soft Computing, 171, 112748 · 2025 </p> <div class="wk-paper-links"> <a href="https://doi.org/10.1016/j.asoc.2025.112748" target="_blank" rel="noopener noreferrer">Publisher</a> <button class="wk-abstract-toggle" type="button" aria-expanded="false" aria-controls="published-abstract-1"> Abstract <span class="wk-abstract-chevron" aria-hidden="true">▾</span> </button> </div> <div class="wk-paper-abstract" id="published-abstract-1" hidden=""><p>This paper develops an algorithmic trading framework for Korean and U.S. index futures by combining TimeGAN-based time-series augmentation with a three-dimensional convolutional neural network. The empirical analysis evaluates its predictive and trading performance across both markets under realistic futures-market conditions.</p></div> </div> </article> </div> <p class="wk-empty" hidden="">No published papers are listed for this field.</p> </section> <section class="wk-research-section" data-paper-section="working"> <h2>Working Papers</h2> <div class="wk-paper-list"> </div> <p class="wk-empty" hidden="">No working papers are listed for this field.</p> </section> </div> <script>
