@@ -1,7 +1,7 @@
----
-permalink: /robots.txt
----
+# url을 알면 홈페이지를 볼 수 있되, 검색 결과에는 포함시키지 않음
 User-agent: *
-Disallow:
+Disallow: /
 
-Sitemap: {{ site.baseurl | prepend: site.url }}/sitemap.xml
+# 홈페이지 정식 공개
+# User-agent: *
+# Allow: /
