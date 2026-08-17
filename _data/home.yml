@@ -1,0 +1,47 @@
+name: Woojung Kim
+
+position: Ph.D. Student in Artificial Intelligence
+affiliation: Yonsei University
+
+bio: >-
+  I am a Ph.D. student working at the intersection of empirical asset pricing,
+  quantitative finance, and artificial intelligence in finance. My research focuses on
+  asset pricing, factor investing, cross-asset predictability,
+  dynamic portfolio allocation, and machine learning methods for financial markets.
+
+links:
+  email: "wjkim0324@yonsei.ac.kr"
+  cv: /assets/pdf/CV.pdf
+  scholar: "https://scholar.google.com/citations?hl=ko&user=TFioA0AAAAAJ"
+  linkedin: "https://www.linkedin.com/in/woojung-kim-7063012b1?"
+  ssrn: "https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=7766222"
+
+research_interests:
+  - Empirical Asset Pricing
+  - AI in Finance
+  - Quantitative Finance
+  - Conditional Asset Pricing
+  - Factor Investing
+  - Dynamic Portfolio Choice
+  - Cross-Asset Markets
+
+education:
+  - period: "2025–Present"
+    degree: "Ph.D. in Artificial Intelligence"
+    institution: "Yonsei University"
+    detail: ""
+    
+  - period: "2023–2025"
+    degree: "MEng. in Industrial Engineering"
+    institution: "Yonsei University"
+    detail: ""
+    
+  - period: "2018–2022"
+    degree: "BS. in Information & Statistics"
+    institution: "Yonsei University - Wonju"
+    detail: ""
+
+work_experience:
+  - period: "2025.01–2025.03"
+    position: "Intership of Quant Researcher"
+    institution: "QV Labs"
