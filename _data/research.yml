@@ -1,10 +1,16 @@
 published:
   - title: "Prediction of index futures movement using TimeGAN and 3D-CNN: Empirical evidence from Korea and the United States"
     authors: "Woojung Kim, Jiyoung Jeon, Sanghoe Kim, Minwoo Jang, Heesoo Lee, Sanghyuk Yoo, and Kyong Joo Oh"
+    area: engineering
     journal: Applied Soft Computing
     volume: "171"
     article: "112748"
     year: "2025"
     publisher_url: https://doi.org/10.1016/j.asoc.2025.112748
+    abstract: >-
+      This paper develops an algorithmic trading framework for Korean and U.S. index
+      futures by combining TimeGAN-based time-series augmentation with a three-dimensional
+      convolutional neural network. The empirical analysis evaluates its predictive and
+      trading performance across both markets under realistic futures-market conditions.
 
 working: []

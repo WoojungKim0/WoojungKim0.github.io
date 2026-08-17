@@ -102,44 +102,42 @@ nav_order: 1
     font-size: 1rem;
   }
 
-  .wk-interests {
-    margin-top: 1.35rem;
-  }
-
-  .wk-interests h2 {
-    margin: 0 0 0.4rem;
-    font-size: 0.86rem;
-    font-weight: 400;
-  }
-
   .wk-interest-list {
-    margin: 0;
-    color: var(--global-text-color);
-    font-size: 0.82rem;
-    font-weight: 300;
-    line-height: 1.65;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
   }
 
-  .wk-interest + .wk-interest::before {
-    content: "·";
-    padding: 0 0.55rem;
-    color: var(--global-text-color-light);
+  .wk-interest {
+    padding: 0.38rem 0.72rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 999px;
+    color: var(--global-text-color);
+    font-size: 0.78rem;
+    font-weight: 300;
+    line-height: 1.25;
   }
 
   .wk-details {
-    margin-top: 4.25rem;
+    margin-top: 3.5rem;
   }
 
-  .wk-section {
-    margin-bottom: 3.2rem;
+  .wk-card {
+    padding: 1.45rem 1.6rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 9px;
+    background: var(--global-bg-color);
+    box-shadow: 0 1px 3px rgba(11, 18, 21, 0.025);
   }
 
-  .wk-section h2 {
-    margin: 0 0 1.25rem;
-    padding-bottom: 0.55rem;
-    border-bottom: 1px solid var(--global-divider-color);
-    font-size: 1.08rem;
-    font-weight: 300;
+  .wk-card + .wk-card {
+    margin-top: 1rem;
+  }
+
+  .wk-card h2 {
+    margin: 0 0 1rem;
+    font-size: 0.98rem;
+    font-weight: 500;
     letter-spacing: -0.025em;
   }
 
@@ -192,7 +190,11 @@ nav_order: 1
     }
 
     .wk-details {
-      margin-top: 3.25rem;
+      margin-top: 2.75rem;
+    }
+
+    .wk-card {
+      padding: 1.2rem;
     }
 
     .wk-row {
@@ -241,17 +243,18 @@ nav_order: 1
         {% endif %}
       </div>
 
-      <div class="wk-interests">
-        <h2>Research Interests</h2>
-        <p class="wk-interest-list">
-          {% for interest in site.data.home.research_interests %}<span class="wk-interest">{{ interest }}</span>{% endfor %}
-        </p>
-      </div>
     </div>
   </section>
 
   <div class="wk-details">
-    <section class="wk-section">
+    <section class="wk-card">
+      <h2>Research Interests</h2>
+      <div class="wk-interest-list">
+        {% for interest in site.data.home.research_interests %}<span class="wk-interest">{{ interest }}</span>{% endfor %}
+      </div>
+    </section>
+
+    <section class="wk-card">
       <h2>Education</h2>
       {% for item in site.data.home.education %}
         <div class="wk-row">
@@ -266,7 +269,7 @@ nav_order: 1
     </section>
 
     {% if site.data.home.work_experience.size > 0 %}
-      <section class="wk-section">
+      <section class="wk-card">
         <h2>Experience</h2>
         {% for item in site.data.home.work_experience %}
           <div class="wk-row">
