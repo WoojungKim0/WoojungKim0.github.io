@@ -1,0 +1,11 @@
+html[data-theme="light"] {
+  --global-theme-color: #2f80c9;
+  --global-hover-color: #216aa8;
+  --global-hover-text-color: #ffffff;
+}
+
+html[data-theme="dark"] {
+  --global-theme-color: #79b9ed;
+  --global-hover-color: #9acbf3;
+  --global-hover-text-color: #111111;
+}
