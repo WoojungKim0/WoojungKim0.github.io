@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://WoojungKim0.github.io/sitemap.xml
+Sitemap: https://woojungkim0.github.io/sitemap.xml
