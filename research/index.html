@@ -25,10 +25,10 @@
 
   .wk-filter-button {
     padding: 0.38rem 0.82rem;
-    border: 1px solid var(--global-divider-color);
+    border: 1px solid var(--global-divider-color, rgba(11, 18, 21, 0.14));
     border-radius: 999px;
     background: transparent;
-    color: var(--global-text-color);
+    color: var(--global-text-color, #0b1215);
     font: inherit;
     font-size: 0.78rem;
     font-weight: 300;
@@ -41,14 +41,22 @@
   }
 
   .wk-filter-button:hover {
-    border-color: var(--global-theme-color);
-    color: var(--global-theme-color);
+    border-color: var(--global-theme-color, #1768ac);
+    color: var(--global-theme-color, #1768ac);
   }
 
-  .wk-filter-button.is-active {
-    border-color: var(--global-theme-color);
-    background: var(--global-theme-color);
+  .wk-filter-button.is-active,
+  .wk-filter-button[aria-pressed="true"] {
+    border-color: var(--global-theme-color, #1768ac);
+    background-color: var(--global-theme-color, #1768ac);
     color: #fff;
+    box-shadow: 0 1px 3px rgba(11, 18, 21, 0.08);
+  }
+
+  .wk-paper[hidden],
+  .wk-empty[hidden],
+  .wk-paper-abstract[hidden] {
+    display: none !important;
   }
 
   .wk-research-section {
