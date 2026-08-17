@@ -1,21 +1,42 @@
 ---
-layout: default
+layout: null
 title: CV
 permalink: /cv/
 nav: true
 nav_order: 3
+sitemap: false
 ---
 
-<script>
-  window.location.replace(
-    "{{ '/assets/pdf/CV.pdf' | relative_url }}"
-  );
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
-<noscript>
+  <meta
+    http-equiv="refresh"
+    content="0; url={{ '/assets/pdf/CV.pdf' | relative_url }}"
+  >
+
+  <link
+    rel="canonical"
+    href="{{ '/assets/pdf/CV.pdf' | absolute_url }}"
+  >
+
+  <script>
+    window.location.replace(
+      "{{ '/assets/pdf/CV.pdf' | relative_url }}"
+    );
+  </script>
+
+  <title>CV | Woojung Kim</title>
+</head>
+
+<body>
   <p>
+    Redirecting to
     <a href="{{ '/assets/pdf/CV.pdf' | relative_url }}">
-      Open CV
-    </a>
+      Woojung Kim's CV
+    </a>.
   </p>
-</noscript>
+</body>
+</html>
