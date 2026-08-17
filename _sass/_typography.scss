@@ -1,0 +1,64 @@
+body {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Helvetica Neue",
+    Arial,
+    sans-serif !important;
+
+  font-weight: 400;
+  letter-spacing: -0.005em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+button,
+input,
+textarea {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Helvetica Neue",
+    Arial,
+    sans-serif !important;
+}
+
+.navbar-brand,
+.navbar-brand *,
+.navbar .nav-link {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Helvetica Neue",
+    Arial,
+    sans-serif !important;
+}
+
+.navbar-brand,
+.navbar-brand * {
+  font-weight: 400 !important;
+}
+
+.navbar-brand {
+  font-size: 1rem !important;
+  letter-spacing: -0.015em;
+}
+
+.navbar .nav-link {
+  font-size: 0.93rem !important;
+  font-weight: 400 !important;
+}
+
+.navbar .nav-link:hover {
+  color: var(--global-theme-color) !important;
+}
