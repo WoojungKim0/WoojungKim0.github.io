@@ -1,3 +1,4 @@
+:root,
 html[data-theme="light"] {
   --global-bg-color: #fafaf8;
   --global-card-bg-color: #fafaf8;
@@ -10,6 +11,9 @@ html[data-theme="light"] {
   --wk-panel-border-color: rgba(23, 104, 172, 0.18);
   --wk-panel-bg-color: rgba(255, 255, 255, 0.42);
   --wk-panel-shadow: 0 2px 8px rgba(11, 18, 21, 0.025);
+  --wk-home-panel-border-color: rgba(23, 104, 172, 0.3);
+  --wk-home-panel-bg-color: rgba(255, 255, 255, 0.68);
+  --wk-home-panel-shadow: 0 2px 10px rgba(11, 18, 21, 0.04);
 }
 
 html[data-theme="dark"] {
@@ -19,4 +23,7 @@ html[data-theme="dark"] {
   --wk-panel-border-color: rgba(121, 185, 237, 0.24);
   --wk-panel-bg-color: rgba(255, 255, 255, 0.025);
   --wk-panel-shadow: none;
+  --wk-home-panel-border-color: rgba(121, 185, 237, 0.34);
+  --wk-home-panel-bg-color: rgba(255, 255, 255, 0.045);
+  --wk-home-panel-shadow: none;
 }
