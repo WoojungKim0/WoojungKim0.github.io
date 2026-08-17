@@ -19,7 +19,9 @@
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
-    border-radius: 5px;
+    border: 1px solid var(--wk-panel-border-color);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(11, 18, 21, 0.08);
   }
 
   .wk-name {
@@ -119,11 +121,7 @@
   }
 
   .wk-card {
-    padding: 1.45rem 1.6rem;
-    border: 1px solid var(--wk-home-panel-border-color);
-    border-radius: 9px;
-    background: var(--wk-home-panel-bg-color);
-    box-shadow: var(--wk-home-panel-shadow);
+    scroll-margin-top: 5rem;
   }
 
   .wk-card + .wk-card {
@@ -189,16 +187,12 @@
       margin-top: 2.75rem;
     }
 
-    .wk-card {
-      padding: 1.2rem;
-    }
-
     .wk-row {
       grid-template-columns: 1fr;
       gap: 0.22rem;
     }
   }
-</style> <div class="wk-home"> <section class="wk-hero"> <div class="wk-photo"> <img src="/assets/img/prof_pic.jpg?v=96c579c244796bad3245f34392bee6f5" alt="Woojung Kim"> </div> <div class="wk-intro"> <h1 class="wk-name">Woojung Kim</h1> <p class="wk-position"> Ph.D. Student in Artificial Intelligence<span class="wk-position-separator" aria-hidden="true">·</span>Empirical Asset Pricing </p> <p class="wk-affiliation">Yonsei University</p> <a class="wk-email" href="mailto:wjkim0324@yonsei.ac.kr">wjkim0324@yonsei.ac.kr</a> <p class="wk-bio">I am pursuing a Ph.D. in Artificial Intelligence at Yonsei University, advised by a professor of finance at the Yonsei School of Business. My research centers on empirical asset pricing, including factor investing, cross-asset predictability, and dynamic portfolio allocation, and uses machine learning methods to study financial markets.</p> <div class="wk-links" aria-label="Academic and professional profiles"> <a class="wk-icon-link" href="/assets/pdf/CV.pdf" title="Curriculum Vitae" aria-label="Curriculum Vitae"> <i class="fa-solid fa-file-pdf"></i> </a> <a class="wk-icon-link" href="https://scholar.google.com/citations?hl=ko&amp;user=TFioA0AAAAAJ" target="_blank" rel="noopener noreferrer" title="Google Scholar" aria-label="Google Scholar"> <i class="ai ai-google-scholar"></i> </a> <a class="wk-icon-link" href="https://www.linkedin.com/in/woojung-kim-7063012b1?" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"> <i class="fa-brands fa-linkedin-in"></i> </a> <a class="wk-icon-link" href="https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=7766222" target="_blank" rel="noopener noreferrer" title="SSRN" aria-label="SSRN"> <i class="fa-solid fa-file-lines"></i> </a> </div> </div> </section> <div class="wk-details"> <section class="wk-card"> <h2>Research Interests</h2> <div class="wk-interest-list"> <span class="wk-interest">Empirical Asset Pricing</span><span class="wk-interest">AI in Finance</span><span class="wk-interest">Conditional Asset Pricing</span><span class="wk-interest">Factor Investing</span><span class="wk-interest">Dynamic Portfolio Choice</span><span class="wk-interest">Cross-Asset Markets</span> </div> </section> <section class="wk-card"> <h2>Education</h2> <div class="wk-row"> <div class="wk-period">2025–Present</div> <div> <div class="wk-row-title">Ph.D. in Artificial Intelligence</div> <div class="wk-row-subtitle">Yonsei University</div> </div> </div> <div class="wk-row"> <div class="wk-period">2023–2025</div> <div> <div class="wk-row-title">M.Eng. in Industrial Engineering</div> <div class="wk-row-subtitle">Yonsei University</div> </div> </div> <div class="wk-row"> <div class="wk-period">2018–2022</div> <div> <div class="wk-row-title">B.S. in Information &amp; Statistics</div> <div class="wk-row-subtitle">Yonsei University - Wonju</div> </div> </div> </section> <section class="wk-card"> <h2>Experience</h2> <div class="wk-row"> <div class="wk-period">2025.01–2025.03</div> <div> <div class="wk-row-title">Quant Research Intern</div> <div class="wk-row-subtitle">QV Labs</div> </div> </div> </section> </div> </div> <script>
+</style> <div class="wk-home"> <section class="wk-hero"> <div class="wk-photo"> <img src="/assets/img/prof_pic.jpg?v=96c579c244796bad3245f34392bee6f5" alt="Woojung Kim"> </div> <div class="wk-intro"> <h1 class="wk-name">Woojung Kim</h1> <p class="wk-position"> Ph.D. Student in Artificial Intelligence<span class="wk-position-separator" aria-hidden="true">·</span>Empirical Asset Pricing </p> <p class="wk-affiliation">Yonsei University</p> <a class="wk-email" href="mailto:wjkim0324@yonsei.ac.kr">wjkim0324@yonsei.ac.kr</a> <p class="wk-bio">I am pursuing a Ph.D. in Artificial Intelligence at Yonsei University, advised by a professor of finance at the Yonsei School of Business. My research centers on empirical asset pricing, including factor investing, cross-asset predictability, and dynamic portfolio allocation, and uses machine learning methods to study financial markets.</p> <div class="wk-links" aria-label="Academic and professional profiles"> <a class="wk-icon-link" href="/assets/pdf/CV.pdf" title="Curriculum Vitae" aria-label="Curriculum Vitae"> <i class="fa-solid fa-file-pdf"></i> </a> <a class="wk-icon-link" href="https://scholar.google.com/citations?hl=ko&amp;user=TFioA0AAAAAJ" target="_blank" rel="noopener noreferrer" title="Google Scholar" aria-label="Google Scholar"> <i class="ai ai-google-scholar"></i> </a> <a class="wk-icon-link" href="https://www.linkedin.com/in/woojung-kim-7063012b1?" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"> <i class="fa-brands fa-linkedin-in"></i> </a> <a class="wk-icon-link" href="https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=7766222" target="_blank" rel="noopener noreferrer" title="SSRN" aria-label="SSRN"> <i class="fa-solid fa-file-lines"></i> </a> </div> </div> </section> <div class="wk-details"> <section class="wk-section-card wk-card"> <h2>Research Interests</h2> <div class="wk-interest-list"> <span class="wk-interest">Empirical Asset Pricing</span><span class="wk-interest">AI in Finance</span><span class="wk-interest">Conditional Asset Pricing</span><span class="wk-interest">Factor Investing</span><span class="wk-interest">Dynamic Portfolio Choice</span><span class="wk-interest">Cross-Asset Markets</span> </div> </section> <section class="wk-section-card wk-card"> <h2>Education</h2> <div class="wk-row"> <div class="wk-period">2025–Present</div> <div> <div class="wk-row-title"> Ph.D. in Artificial Intelligence </div> <div class="wk-row-subtitle">Yonsei University</div> </div> </div> <div class="wk-row"> <div class="wk-period">2023–2025</div> <div> <div class="wk-row-title"> M.Eng. in Industrial Engineering </div> <div class="wk-row-subtitle">Yonsei University</div> </div> </div> <div class="wk-row"> <div class="wk-period">2018–2022</div> <div> <div class="wk-row-title"> B.S. in Information &amp; Statistics </div> <div class="wk-row-subtitle">Yonsei University - Wonju</div> </div> </div> </section> <section class="wk-section-card wk-card"> <h2>Experience</h2> <div class="wk-row"> <div class="wk-period">2025.01–2025.03</div> <div> <div class="wk-row-title"> Quant Research Intern </div> <div class="wk-row-subtitle">QV Labs</div> </div> </div> </section> </div> </div> <script>
   document.addEventListener("DOMContentLoaded", function () {
     const navContainer =
       document.querySelector("nav.navbar .container") || document.querySelector("header nav .container") || document.querySelector("nav .container");
