@@ -193,7 +193,7 @@ nav_order: 1
 
     <div class="wk-photo">
       <img
-        src="{{ '/assets/img/prof_pic.jpg' | relative_url }}"
+        src="{{ '/assets/img/prof_pic.jpg' | relative_url | bust_file_cache }}"
         alt="{{ site.data.home.name }}"
       >
     </div>
