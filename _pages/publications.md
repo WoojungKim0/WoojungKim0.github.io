@@ -79,15 +79,22 @@ nav_order: 2
     counter-increment: paper;
     display: grid;
     grid-template-columns: 46px minmax(0, 1fr);
-    gap: 0.5rem;
-    margin: 0 -0.25rem;
-    padding: 0.75rem 0.25rem;
-    border-radius: 4px;
-    transition: background-color 0.16s ease;
+    gap: 0.65rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--wk-panel-border-color);
+    border-radius: 9px;
+    background: var(--wk-panel-bg-color);
+    box-shadow: var(--wk-panel-shadow);
+    transition:
+      border-color 0.16s ease,
+      background-color 0.16s ease,
+      box-shadow 0.16s ease;
   }
 
   .wk-paper:hover {
-    background: rgba(11, 18, 21, 0.025);
+    border-color: var(--global-theme-color);
+    background: var(--global-card-bg-color);
+    box-shadow: 0 3px 10px rgba(11, 18, 21, 0.04);
   }
 
   .wk-paper::before {
@@ -182,7 +189,12 @@ nav_order: 2
   }
 
   .wk-empty {
-    margin: 0.25rem 0 0 46px;
+    margin: 0;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--wk-panel-border-color);
+    border-radius: 9px;
+    background: var(--wk-panel-bg-color);
+    box-shadow: var(--wk-panel-shadow);
     color: var(--global-text-color-light);
     font-size: 0.8rem;
     font-weight: 300;
@@ -195,10 +207,11 @@ nav_order: 2
 
     .wk-paper {
       grid-template-columns: 34px minmax(0, 1fr);
+      padding: 0.9rem 0.85rem;
     }
 
     .wk-empty {
-      margin-left: 34px;
+      padding: 0.9rem 0.85rem;
     }
   }
 </style>

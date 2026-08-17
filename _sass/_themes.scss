@@ -7,10 +7,16 @@ html[data-theme="light"] {
   --global-theme-color: #1768ac;
   --global-hover-color: #0f426c;
   --global-hover-text-color: #ffffff;
+  --wk-panel-border-color: rgba(23, 104, 172, 0.18);
+  --wk-panel-bg-color: rgba(255, 255, 255, 0.42);
+  --wk-panel-shadow: 0 2px 8px rgba(11, 18, 21, 0.025);
 }
 
 html[data-theme="dark"] {
   --global-theme-color: #79b9ed;
   --global-hover-color: #9acbf3;
   --global-hover-text-color: #111111;
+  --wk-panel-border-color: rgba(121, 185, 237, 0.24);
+  --wk-panel-bg-color: rgba(255, 255, 255, 0.025);
+  --wk-panel-shadow: none;
 }

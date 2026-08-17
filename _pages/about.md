@@ -124,10 +124,10 @@ nav_order: 1
 
   .wk-card {
     padding: 1.45rem 1.6rem;
-    border: 1px solid var(--global-divider-color);
+    border: 1px solid var(--wk-panel-border-color);
     border-radius: 9px;
-    background: var(--global-bg-color);
-    box-shadow: 0 1px 3px rgba(11, 18, 21, 0.025);
+    background: var(--wk-panel-bg-color);
+    box-shadow: var(--wk-panel-shadow);
   }
 
   .wk-card + .wk-card {
