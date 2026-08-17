@@ -382,3 +382,22 @@ nav_order: 1
   </div>
 
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navContainer =
+      document.querySelector("nav.navbar .container") ||
+      document.querySelector("header nav .container") ||
+      document.querySelector("nav .container");
+
+    if (navContainer && !navContainer.querySelector(".navbar-brand")) {
+      const brand = document.createElement("a");
+
+      brand.className = "navbar-brand wk-navbar-brand";
+      brand.href = "{{ '/' | relative_url }}";
+      brand.textContent = "Woojung Kim";
+
+      navContainer.prepend(brand);
+    }
+  });
+</script>
