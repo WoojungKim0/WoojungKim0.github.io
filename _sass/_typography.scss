@@ -62,3 +62,11 @@ textarea {
 .navbar .nav-link:hover {
   color: var(--global-theme-color) !important;
 }
+
+.wk-navbar-brand {
+  color: var(--global-text-color) !important;
+  text-decoration: none !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.015em;
+}
