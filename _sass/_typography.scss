@@ -70,3 +70,13 @@ textarea {
   font-weight: 400 !important;
   letter-spacing: -0.015em;
 }
+
+.navbar .nav-item.active > .nav-link,
+.navbar .nav-link.active {
+  color: var(--global-theme-color) !important;
+}
+
+.navbar .nav-item.active > .nav-link::after,
+.navbar .nav-link.active::after {
+  background-color: var(--global-theme-color) !important;
+}
