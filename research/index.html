@@ -4,17 +4,51 @@
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://woojungkim0.github.io/research/"> </head> <body class="fixed-top-nav sticky-bottom-footer"> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Woojung</span> Kim </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">Home </a> </li> <li class="nav-item active"> <a class="nav-link" href="/research/">Research <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item "> <a class="nav-link" href="/achievements/">Achievements </a> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Research</h1> <p class="post-description">Research in empirical asset pricing and AI in finance.</p> </header> <article> <style>
   .wk-research {
-    counter-reset: paper;
     padding-top: 0.5rem;
   }
 
   .wk-research-intro {
     max-width: 720px;
-    margin: 0 0 3.25rem;
+    margin: 0 0 1.35rem;
     color: var(--global-text-color-light);
     font-size: 0.86rem;
     font-weight: 300;
     line-height: 1.7;
+  }
+
+  .wk-research-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .wk-filter-button {
+    padding: 0.38rem 0.82rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--global-text-color);
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 300;
+    line-height: 1.25;
+    cursor: pointer;
+    transition:
+      border-color 0.16s ease,
+      background-color 0.16s ease,
+      color 0.16s ease;
+  }
+
+  .wk-filter-button:hover {
+    border-color: var(--global-theme-color);
+    color: var(--global-theme-color);
+  }
+
+  .wk-filter-button.is-active {
+    border-color: var(--global-theme-color);
+    background: var(--global-theme-color);
+    color: #fff;
   }
 
   .wk-research-section {
@@ -22,7 +56,7 @@
   }
 
   .wk-research-section h2 {
-    margin: 0 0 1.65rem;
+    margin: 0 0 1.25rem;
     color: var(--global-text-color);
     font-size: 1.16rem;
     font-weight: 300;
@@ -30,6 +64,7 @@
   }
 
   .wk-paper-list {
+    counter-reset: paper;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -90,35 +125,119 @@
     font-weight: 300;
   }
 
-  .wk-paper-links a {
+  .wk-paper-links a,
+  .wk-abstract-toggle {
+    border: 0;
+    background: transparent;
     color: var(--global-theme-color);
+    font: inherit;
     text-decoration: none;
-    transition:
-      color 0.16s ease,
-      transform 0.16s ease;
+    cursor: pointer;
+    transition: color 0.16s ease;
   }
 
-  .wk-paper-links a:hover {
+  .wk-abstract-toggle {
+    padding: 0;
+  }
+
+  .wk-paper-links a:hover,
+  .wk-abstract-toggle:hover {
     color: var(--global-hover-color);
-    transform: translateY(-1px);
   }
 
-  .wk-paper-links a + a::before {
+  .wk-paper-links > * + *::before {
     content: "·";
     padding: 0 0.55rem;
     color: var(--global-text-color-light);
   }
 
+  .wk-abstract-chevron {
+    display: inline-block;
+    margin-left: 0.15rem;
+    transition: transform 0.16s ease;
+  }
+
+  .wk-abstract-toggle[aria-expanded="true"] .wk-abstract-chevron {
+    transform: rotate(180deg);
+  }
+
+  .wk-paper-abstract {
+    max-width: 760px;
+    margin-top: 0.55rem;
+    padding-left: 0.8rem;
+    border-left: 1px solid var(--global-divider-color);
+    color: var(--global-text-color-light);
+    font-size: 0.76rem;
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  .wk-paper-abstract p {
+    margin: 0;
+  }
+
+  .wk-empty {
+    margin: 0.25rem 0 0 46px;
+    color: var(--global-text-color-light);
+    font-size: 0.8rem;
+    font-weight: 300;
+  }
+
   @media (max-width: 560px) {
-    .wk-research-intro {
-      margin-bottom: 2.5rem;
+    .wk-research-filter {
+      margin-bottom: 2.4rem;
     }
 
     .wk-paper {
       grid-template-columns: 34px minmax(0, 1fr);
     }
+
+    .wk-empty {
+      margin-left: 34px;
+    }
   }
-</style> <div class="wk-research"> <p class="wk-research-intro"> My research centers on empirical asset pricing, factor investing, cross-asset predictability, and machine learning applications in financial markets. </p> <section class="wk-research-section"> <h2>Published Papers</h2> <div class="wk-paper-list"> <article class="wk-paper"> <div> <h3 class="wk-paper-title">Prediction of index futures movement using TimeGAN and 3D-CNN: Empirical evidence from Korea and the United States</h3> <p class="wk-paper-authors">Woojung Kim, Jiyoung Jeon, Sanghoe Kim, Minwoo Jang, Heesoo Lee, Sanghyuk Yoo, and Kyong Joo Oh</p> <p class="wk-paper-venue"> Applied Soft Computing, 171, 112748 · 2025 </p> <div class="wk-paper-links"> <a href="https://doi.org/10.1016/j.asoc.2025.112748" target="_blank" rel="noopener noreferrer">Publisher</a> </div> </div> </article> </div> </section> </div> </article> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Woojung Kim. </div> </footer> <script>
+</style> <div class="wk-research"> <p class="wk-research-intro"> My research centers on empirical asset pricing, factor investing, cross-asset predictability, and machine learning applications in financial markets. </p> <div class="wk-research-filter" role="group" aria-label="Filter research by field"> <button class="wk-filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button> <button class="wk-filter-button" type="button" data-filter="finance" aria-pressed="false">Finance</button> <button class="wk-filter-button" type="button" data-filter="engineering" aria-pressed="false">Engineering</button> </div> <section class="wk-research-section" data-paper-section="published"> <h2>Published Papers</h2> <div class="wk-paper-list"> <article class="wk-paper" data-area="engineering"> <div> <h3 class="wk-paper-title">Prediction of index futures movement using TimeGAN and 3D-CNN: Empirical evidence from Korea and the United States</h3> <p class="wk-paper-authors">Woojung Kim, Jiyoung Jeon, Sanghoe Kim, Minwoo Jang, Heesoo Lee, Sanghyuk Yoo, and Kyong Joo Oh</p> <p class="wk-paper-venue"> Applied Soft Computing, 171, 112748 · 2025 </p> <div class="wk-paper-links"> <a href="https://doi.org/10.1016/j.asoc.2025.112748" target="_blank" rel="noopener noreferrer">Publisher</a> <button class="wk-abstract-toggle" type="button" aria-expanded="false" aria-controls="published-abstract-1"> Abstract <span class="wk-abstract-chevron" aria-hidden="true">▾</span> </button> </div> <div class="wk-paper-abstract" id="published-abstract-1" hidden=""><p>This paper develops an algorithmic trading framework for Korean and U.S. index futures by combining TimeGAN-based time-series augmentation with a three-dimensional convolutional neural network. The empirical analysis evaluates its predictive and trading performance across both markets under realistic futures-market conditions.</p></div> </div> </article> </div> <p class="wk-empty" hidden="">No published papers are listed for this field.</p> </section> <section class="wk-research-section" data-paper-section="working"> <h2>Working Papers</h2> <div class="wk-paper-list"> </div> <p class="wk-empty" hidden="">No working papers are listed for this field.</p> </section> </div> <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const filterButtons = document.querySelectorAll(".wk-filter-button");
+    const sections = document.querySelectorAll("[data-paper-section]");
+
+    function applyFilter(filter) {
+      filterButtons.forEach(function (button) {
+        const isActive = button.dataset.filter === filter;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      sections.forEach(function (section) {
+        const papers = section.querySelectorAll(".wk-paper");
+        let visibleCount = 0;
+        papers.forEach(function (paper) {
+          const isVisible = filter === "all" || paper.dataset.area === filter;
+          paper.hidden = !isVisible;
+          if (isVisible) visibleCount += 1;
+        });
+        section.querySelector(".wk-empty").hidden = visibleCount > 0;
+      });
+    }
+
+    filterButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        applyFilter(button.dataset.filter);
+      });
+    });
+
+    document.querySelectorAll(".wk-abstract-toggle").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const abstract = document.getElementById(button.getAttribute("aria-controls"));
+        const willOpen = button.getAttribute("aria-expanded") !== "true";
+        button.setAttribute("aria-expanded", String(willOpen));
+        abstract.hidden = !willOpen;
+      });
+    });
+
+    applyFilter("all");
+  });
+</script> </article> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Woojung Kim. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
