@@ -8,25 +8,26 @@ nav_order: 2
 
 <style>
   .wk-research {
-    padding-top: 0.5rem;
+    padding-top: 0.8rem;
   }
 
   .wk-research-filter {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.55rem;
-    margin: 0 0 3.15rem;
+    gap: 0.62rem;
+    margin: 0 0 3.5rem;
   }
 
   .wk-filter-button {
-    padding: 0.45rem 0.92rem;
-    border: 1px solid var(--global-divider-color, rgba(11, 18, 21, 0.14));
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--wk-panel-border-color);
     border-radius: 999px;
-    background: var(--global-bg-color, #fafaf8);
-    color: var(--global-text-color, #0b1215);
+    background: var(--wk-panel-bg-color);
+    box-shadow: 0 7px 20px rgba(32, 67, 94, 0.035);
+    color: var(--global-text-color);
     font: inherit;
-    font-size: 0.82rem;
-    font-weight: 400;
+    font-size: 0.83rem;
+    font-weight: 500;
     line-height: 1.25;
     cursor: pointer;
     transition:
@@ -47,7 +48,7 @@ nav_order: 2
     border-color: var(--global-theme-color, #1768ac);
     background-color: var(--global-theme-color, #1768ac);
     color: #fff;
-    box-shadow: 0 2px 7px rgba(23, 104, 172, 0.18);
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--global-theme-color) 24%, transparent);
   }
 
   .wk-paper[hidden],
@@ -57,34 +58,36 @@ nav_order: 2
   }
 
   .wk-research-section {
-    margin-bottom: 3.5rem;
+    margin-bottom: 4rem;
   }
 
   .wk-research-section h2 {
-    margin: 0 0 1.15rem;
+    margin: 0 0 1.25rem;
     color: var(--global-text-color);
-    font-size: 1.22rem;
-    font-weight: 400;
-    letter-spacing: -0.035em;
+    font-family: "Newsreader", Georgia, serif !important;
+    font-size: 1.62rem;
+    font-weight: 500;
+    letter-spacing: -0.04em;
   }
 
   .wk-paper-list {
     counter-reset: paper;
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 1rem;
   }
 
   .wk-paper {
     counter-increment: paper;
     display: grid;
-    grid-template-columns: 48px minmax(0, 1fr);
-    gap: 0.7rem;
-    padding: 1.15rem 1.25rem;
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 0.9rem;
+    padding: 1.4rem 1.5rem;
     border: 1px solid var(--wk-panel-border-color);
-    border-radius: 10px;
+    border-radius: 16px;
     background: var(--wk-panel-bg-color);
     box-shadow: var(--wk-panel-shadow);
+    backdrop-filter: blur(14px) saturate(115%);
     transition:
       border-color 0.16s ease,
       background-color 0.16s ease,
@@ -93,28 +96,35 @@ nav_order: 2
   }
 
   .wk-paper:hover {
-    border-color: rgba(23, 104, 172, 0.34);
+    border-color: color-mix(in srgb, var(--global-theme-color) 34%, transparent);
     background: var(--global-card-bg-color);
-    box-shadow: 0 5px 16px rgba(11, 18, 21, 0.05);
-    transform: translateY(-1px);
+    box-shadow: 0 20px 54px rgba(32, 67, 94, 0.085);
+    transform: translateY(-2px);
   }
 
   .wk-paper::before {
     content: counter(paper, decimal-leading-zero);
-    padding-top: 0.18rem;
-    color: rgba(11, 18, 21, 0.42);
-    font-size: 0.84rem;
-    font-weight: 300;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid color-mix(in srgb, var(--global-theme-color) 16%, transparent);
+    border-radius: 50%;
+    background: var(--wk-chip-bg-color);
+    color: var(--global-theme-color);
+    font-size: 0.76rem;
+    font-weight: 500;
     letter-spacing: 0.06em;
   }
 
   .wk-paper-title {
-    margin: 0 0 0.22rem;
+    margin: 0 0 0.3rem;
     color: var(--global-text-color);
-    font-size: clamp(1.02rem, 2vw, 1.12rem);
+    font-size: clamp(1.06rem, 2vw, 1.16rem);
     font-weight: 600;
     letter-spacing: -0.025em;
-    line-height: 1.4;
+    line-height: 1.42;
   }
 
   .wk-paper-authors,
@@ -122,9 +132,9 @@ nav_order: 2
   .wk-paper-note {
     margin: 0;
     color: var(--global-text-color-light);
-    font-size: 0.84rem;
-    font-weight: 300;
-    line-height: 1.55;
+    font-size: 0.86rem;
+    font-weight: 400;
+    line-height: 1.58;
   }
 
   .wk-paper-venue {
@@ -139,9 +149,9 @@ nav_order: 2
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 0.35rem;
-    font-size: 0.8rem;
-    font-weight: 400;
+    margin-top: 0.48rem;
+    font-size: 0.82rem;
+    font-weight: 500;
   }
 
   .wk-paper-links a,
@@ -178,15 +188,17 @@ nav_order: 2
   }
 
   .wk-paper-abstract {
-    max-width: 780px;
-    margin-top: 0.7rem;
-    padding: 0.75rem 0.9rem;
-    border-left: 2px solid var(--global-theme-color);
-    background: rgba(23, 104, 172, 0.035);
+    max-width: 800px;
+    margin-top: 0.9rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid color-mix(in srgb, var(--global-theme-color) 15%, transparent);
+    border-left: 3px solid var(--global-theme-color);
+    border-radius: 0 10px 10px 0;
+    background: var(--wk-abstract-bg-color);
     color: var(--global-text-color-light);
-    font-size: 0.82rem;
-    font-weight: 300;
-    line-height: 1.7;
+    font-size: 0.84rem;
+    font-weight: 400;
+    line-height: 1.75;
   }
 
   .wk-paper-abstract p {
@@ -195,9 +207,9 @@ nav_order: 2
 
   .wk-empty {
     margin: 0;
-    padding: 1.05rem 1.2rem;
+    padding: 1.2rem 1.35rem;
     border: 1px solid var(--wk-panel-border-color);
-    border-radius: 10px;
+    border-radius: 14px;
     background: var(--wk-panel-bg-color);
     box-shadow: var(--wk-panel-shadow);
     color: var(--global-text-color-light);
@@ -211,8 +223,13 @@ nav_order: 2
     }
 
     .wk-paper {
-      grid-template-columns: 35px minmax(0, 1fr);
-      padding: 1rem 0.9rem;
+      grid-template-columns: 1fr;
+      padding: 1.15rem 1rem;
+    }
+
+    .wk-paper::before {
+      width: 1.75rem;
+      height: 1.75rem;
     }
 
     .wk-empty {

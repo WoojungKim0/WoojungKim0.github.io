@@ -20,6 +20,8 @@ sections:
         year: "2025"
         publisher_url: https://doi.org/10.1016/j.asoc.2025.112748
         abstract_url: https://www.sciencedirect.com/science/article/abs/pii/S1568494625000596
+        # Replace abstract_excerpt with `abstract` after supplying the exact, author-approved full text.
+        # The same `abstract` field is used for both published and working papers.
         abstract_excerpt: >-
           Using time-series generative adversarial networks (TimeGAN), we augment
           time-series data into three dimensions and employ a 3-dimensional convolutional
