@@ -4,20 +4,15 @@ html {
 
 body {
   font-family:
-    "DM Sans",
+    "Inter",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif !important;
-  font-weight: 400;
-  letter-spacing: -0.014em;
-  line-height: 1.68;
-  background-image:
-    radial-gradient(circle at 84% 4%, var(--wk-blue-glow) 0, transparent 27rem),
-    radial-gradient(circle at 8% 20%, var(--wk-warm-glow) 0, transparent 24rem),
-    linear-gradient(180deg, color-mix(in srgb, var(--global-bg-color) 86%, white) 0, var(--global-bg-color) 27rem);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  font-weight: 300;
+  letter-spacing: -0.012em;
+  line-height: 1.65;
+  background: var(--global-bg-color);
 }
 
 h1,
@@ -33,7 +28,7 @@ button,
 input,
 textarea {
   font-family:
-    "DM Sans",
+    "Inter",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
@@ -44,7 +39,7 @@ textarea {
 .navbar-brand *,
 .navbar .nav-link {
   font-family:
-    "DM Sans",
+    "Inter",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
@@ -53,18 +48,18 @@ textarea {
 
 .navbar-brand,
 .navbar-brand * {
-  font-weight: 500 !important;
+  font-weight: 300 !important;
 }
 
 .navbar-brand {
-  font-size: 0.96rem !important;
-  letter-spacing: -0.03em;
+  font-size: 0.92rem !important;
+  letter-spacing: -0.025em;
 }
 
 .navbar .nav-link {
-  font-size: 0.87rem !important;
-  font-weight: 400 !important;
-  letter-spacing: -0.018em;
+  font-size: 0.83rem !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.012em;
 }
 
 .navbar .nav-link:hover {
@@ -74,16 +69,16 @@ textarea {
 .navbar {
   border-bottom: 1px solid var(--global-divider-color);
   background-color: var(--wk-nav-bg-color) !important;
-  box-shadow: 0 8px 32px rgba(32, 67, 94, 0.035) !important;
-  backdrop-filter: blur(18px) saturate(135%);
+  box-shadow: none !important;
+  backdrop-filter: none;
 }
 
 .wk-navbar-brand {
   color: var(--global-text-color) !important;
   text-decoration: none !important;
-  font-size: 0.96rem !important;
-  font-weight: 500 !important;
-  letter-spacing: -0.03em;
+  font-size: 0.92rem !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.025em;
 }
 
 .navbar .nav-item.active > .nav-link,
@@ -97,11 +92,16 @@ textarea {
 }
 
 .post-header .post-title {
-  font-family: "Newsreader", Georgia, serif !important;
-  font-size: clamp(2.55rem, 6vw, 3.35rem);
-  font-weight: 500;
-  letter-spacing: -0.05em;
-  line-height: 1;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif !important;
+  font-size: clamp(2.2rem, 5vw, 2.65rem);
+  font-weight: 300;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
 }
 
 ::selection {
@@ -121,34 +121,19 @@ button:focus-visible {
 
 .wk-section-card {
   position: relative;
-  padding: 1.65rem 1.8rem;
+  padding: 1.5rem 1.65rem;
   overflow: hidden;
   border: 1px solid var(--wk-home-panel-border-color);
-  border-radius: 16px;
+  border-radius: 8px;
   background: var(--wk-home-panel-bg-color);
   box-shadow: var(--wk-home-panel-shadow);
-  backdrop-filter: blur(14px) saturate(115%);
-  transition:
-    border-color 180ms ease,
-    box-shadow 180ms ease,
-    transform 180ms ease;
-}
-
-.wk-section-card::before {
-  position: absolute;
-  top: 0;
-  right: 1.8rem;
-  left: 1.8rem;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--global-theme-color) 62%, transparent), transparent);
-  content: "";
+  backdrop-filter: none;
+  transition: border-color 160ms ease;
 }
 
 @media (hover: hover) {
   .wk-section-card:hover {
-    border-color: color-mix(in srgb, var(--global-theme-color) 32%, transparent);
-    box-shadow: 0 20px 54px rgba(32, 67, 94, 0.085);
-    transform: translateY(-2px);
+    border-color: #c8d0d6;
   }
 }
 
@@ -159,16 +144,5 @@ button:focus-visible {
 
   .wk-section-card {
     padding: 1.25rem;
-  }
-
-  .wk-section-card::before {
-    right: 1.25rem;
-    left: 1.25rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .wk-section-card {
-    transition: none;
   }
 }

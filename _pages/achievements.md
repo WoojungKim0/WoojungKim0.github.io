@@ -10,24 +10,23 @@ nav_order: 4
   .wk-achievements {
     display: flex;
     flex-direction: column;
-    gap: 1.15rem;
-    padding-top: 0.8rem;
+    gap: 1rem;
+    padding-top: 0.35rem;
   }
 
   .wk-achievement-card h2 {
-    margin: 0 0 1.2rem;
+    margin: 0 0 0.9rem;
     color: var(--global-text-color);
-    font-family: "Newsreader", Georgia, serif !important;
-    font-size: 1.42rem;
-    font-weight: 500;
-    letter-spacing: -0.04em;
+    font-size: 1.05rem;
+    font-weight: 400;
+    letter-spacing: -0.025em;
   }
 
   .wk-achievement-item {
     display: grid;
-    grid-template-columns: 92px minmax(0, 1fr);
-    gap: 1.35rem;
-    padding: 1rem 0;
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 1.2rem;
+    padding: 0.85rem 0;
   }
 
   .wk-achievement-item + .wk-achievement-item {
@@ -36,15 +35,15 @@ nav_order: 4
 
   .wk-achievement-year {
     color: var(--global-text-color-light, #6b7280);
-    font-size: 0.83rem;
-    font-weight: 500;
+    font-size: 0.78rem;
+    font-weight: 300;
   }
 
   .wk-achievement-title {
-    margin-bottom: 0.16rem;
+    margin-bottom: 0.12rem;
     color: var(--global-text-color);
-    font-size: 0.98rem;
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 500;
     letter-spacing: -0.015em;
     line-height: 1.45;
   }
@@ -60,9 +59,9 @@ nav_order: 4
 
   .wk-achievement-meta {
     color: var(--global-text-color-light, #6b7280);
-    font-size: 0.86rem;
-    font-weight: 400;
-    line-height: 1.6;
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.55;
   }
 
   @media (max-width: 620px) {

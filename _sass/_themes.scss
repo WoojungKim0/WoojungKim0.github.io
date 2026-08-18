@@ -1,24 +1,22 @@
 :root,
 html[data-theme="light"] {
-  --global-bg-color: #f8fafc;
+  --global-bg-color: #ffffff;
   --global-card-bg-color: #ffffff;
-  --global-text-color: #14212b;
-  --global-text-color-light: rgba(20, 33, 43, 0.64);
-  --global-divider-color: rgba(32, 67, 94, 0.13);
-  --global-theme-color: #286c9d;
-  --global-hover-color: #194d73;
+  --global-text-color: #0b1215;
+  --global-text-color-light: #8a8f94;
+  --global-divider-color: #e1e4e7;
+  --global-theme-color: #1768ac;
+  --global-hover-color: #0f426c;
   --global-hover-text-color: #ffffff;
-  --wk-panel-border-color: rgba(40, 108, 157, 0.16);
-  --wk-panel-bg-color: rgba(255, 255, 255, 0.76);
-  --wk-panel-shadow: 0 12px 38px rgba(32, 67, 94, 0.055);
-  --wk-home-panel-border-color: rgba(40, 108, 157, 0.2);
-  --wk-home-panel-bg-color: rgba(255, 255, 255, 0.86);
-  --wk-home-panel-shadow: 0 16px 48px rgba(32, 67, 94, 0.065);
-  --wk-nav-bg-color: rgba(248, 250, 252, 0.84);
-  --wk-chip-bg-color: rgba(238, 246, 251, 0.72);
-  --wk-abstract-bg-color: rgba(234, 244, 250, 0.62);
-  --wk-blue-glow: rgba(125, 188, 226, 0.2);
-  --wk-warm-glow: rgba(236, 220, 190, 0.16);
+  --wk-panel-border-color: #e1e4e7;
+  --wk-panel-bg-color: #ffffff;
+  --wk-panel-shadow: none;
+  --wk-home-panel-border-color: #dce0e3;
+  --wk-home-panel-bg-color: #ffffff;
+  --wk-home-panel-shadow: none;
+  --wk-nav-bg-color: rgba(255, 255, 255, 0.96);
+  --wk-chip-bg-color: #ffffff;
+  --wk-abstract-bg-color: #fafbfc;
 }
 
 html[data-theme="dark"] {
@@ -39,6 +37,4 @@ html[data-theme="dark"] {
   --wk-nav-bg-color: rgba(16, 23, 30, 0.86);
   --wk-chip-bg-color: rgba(121, 185, 237, 0.08);
   --wk-abstract-bg-color: rgba(121, 185, 237, 0.07);
-  --wk-blue-glow: rgba(70, 131, 177, 0.12);
-  --wk-warm-glow: rgba(169, 139, 91, 0.07);
 }

@@ -8,47 +8,45 @@ nav_order: 2
 
 <style>
   .wk-research {
-    padding-top: 0.8rem;
+    padding-top: 0.35rem;
   }
 
   .wk-research-filter {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.62rem;
-    margin: 0 0 3.5rem;
+    gap: 1.55rem;
+    margin: 0 0 3.2rem;
   }
 
   .wk-filter-button {
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--wk-panel-border-color);
-    border-radius: 999px;
-    background: var(--wk-panel-bg-color);
-    box-shadow: 0 7px 20px rgba(32, 67, 94, 0.035);
+    padding: 0.34rem 0.05rem 0.42rem;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
     color: var(--global-text-color);
     font: inherit;
-    font-size: 0.83rem;
-    font-weight: 500;
+    font-size: 0.8rem;
+    font-weight: 300;
     line-height: 1.25;
     cursor: pointer;
     transition:
       border-color 0.16s ease,
-      background-color 0.16s ease,
-      color 0.16s ease,
-      transform 0.16s ease;
+      color 0.16s ease;
   }
 
   .wk-filter-button:hover {
     border-color: var(--global-theme-color, #1768ac);
     color: var(--global-theme-color, #1768ac);
-    transform: translateY(-1px);
   }
 
   .wk-filter-button.is-active,
   .wk-filter-button[aria-pressed="true"] {
-    border-color: var(--global-theme-color, #1768ac);
-    background-color: var(--global-theme-color, #1768ac);
-    color: #fff;
-    box-shadow: 0 8px 20px color-mix(in srgb, var(--global-theme-color) 24%, transparent);
+    border-color: var(--global-theme-color);
+    background: transparent;
+    color: var(--global-theme-color);
+    box-shadow: none;
   }
 
   .wk-paper[hidden],
@@ -58,73 +56,61 @@ nav_order: 2
   }
 
   .wk-research-section {
-    margin-bottom: 4rem;
+    margin-bottom: 3.7rem;
   }
 
   .wk-research-section h2 {
-    margin: 0 0 1.25rem;
+    margin: 0 0 1.1rem;
     color: var(--global-text-color);
-    font-family: "Newsreader", Georgia, serif !important;
-    font-size: 1.62rem;
-    font-weight: 500;
-    letter-spacing: -0.04em;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: -0.03em;
   }
 
   .wk-paper-list {
     counter-reset: paper;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.8rem;
   }
 
   .wk-paper {
     counter-increment: paper;
     display: grid;
-    grid-template-columns: 44px minmax(0, 1fr);
-    gap: 0.9rem;
-    padding: 1.4rem 1.5rem;
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 1.15rem 1.25rem;
     border: 1px solid var(--wk-panel-border-color);
-    border-radius: 16px;
+    border-radius: 8px;
     background: var(--wk-panel-bg-color);
     box-shadow: var(--wk-panel-shadow);
-    backdrop-filter: blur(14px) saturate(115%);
+    backdrop-filter: none;
     transition:
       border-color 0.16s ease,
-      background-color 0.16s ease,
-      box-shadow 0.16s ease,
-      transform 0.16s ease;
+      background-color 0.16s ease;
   }
 
   .wk-paper:hover {
-    border-color: color-mix(in srgb, var(--global-theme-color) 34%, transparent);
+    border-color: #cbd3d9;
     background: var(--global-card-bg-color);
-    box-shadow: 0 20px 54px rgba(32, 67, 94, 0.085);
-    transform: translateY(-2px);
   }
 
   .wk-paper::before {
     content: counter(paper, decimal-leading-zero);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    border: 1px solid color-mix(in srgb, var(--global-theme-color) 16%, transparent);
-    border-radius: 50%;
-    background: var(--wk-chip-bg-color);
-    color: var(--global-theme-color);
-    font-size: 0.76rem;
-    font-weight: 500;
+    padding-top: 0.12rem;
+    color: #a1a6aa;
+    font-size: 0.8rem;
+    font-weight: 300;
     letter-spacing: 0.06em;
   }
 
   .wk-paper-title {
-    margin: 0 0 0.3rem;
+    margin: 0 0 0.22rem;
     color: var(--global-text-color);
-    font-size: clamp(1.06rem, 2vw, 1.16rem);
+    font-size: clamp(1rem, 2vw, 1.08rem);
     font-weight: 600;
     letter-spacing: -0.025em;
-    line-height: 1.42;
+    line-height: 1.4;
   }
 
   .wk-paper-authors,
@@ -132,9 +118,9 @@ nav_order: 2
   .wk-paper-note {
     margin: 0;
     color: var(--global-text-color-light);
-    font-size: 0.86rem;
-    font-weight: 400;
-    line-height: 1.58;
+    font-size: 0.78rem;
+    font-weight: 300;
+    line-height: 1.5;
   }
 
   .wk-paper-venue {
@@ -149,9 +135,9 @@ nav_order: 2
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 0.48rem;
-    font-size: 0.82rem;
-    font-weight: 500;
+    margin-top: 0.28rem;
+    font-size: 0.76rem;
+    font-weight: 300;
   }
 
   .wk-paper-links a,
@@ -188,17 +174,17 @@ nav_order: 2
   }
 
   .wk-paper-abstract {
-    max-width: 800px;
-    margin-top: 0.9rem;
-    padding: 1rem 1.1rem;
-    border: 1px solid color-mix(in srgb, var(--global-theme-color) 15%, transparent);
-    border-left: 3px solid var(--global-theme-color);
-    border-radius: 0 10px 10px 0;
+    max-width: 820px;
+    margin-top: 0.7rem;
+    padding: 0.85rem 0.95rem;
+    border: 1px solid var(--global-divider-color);
+    border-left: 2px solid var(--global-theme-color);
+    border-radius: 0 5px 5px 0;
     background: var(--wk-abstract-bg-color);
-    color: var(--global-text-color-light);
-    font-size: 0.84rem;
-    font-weight: 400;
-    line-height: 1.75;
+    color: #555c61;
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.68;
   }
 
   .wk-paper-abstract p {
@@ -207,13 +193,13 @@ nav_order: 2
 
   .wk-empty {
     margin: 0;
-    padding: 1.2rem 1.35rem;
+    padding: 1rem 1.15rem;
     border: 1px solid var(--wk-panel-border-color);
-    border-radius: 14px;
+    border-radius: 8px;
     background: var(--wk-panel-bg-color);
     box-shadow: var(--wk-panel-shadow);
     color: var(--global-text-color-light);
-    font-size: 0.84rem;
+    font-size: 0.78rem;
     font-weight: 300;
   }
 
@@ -223,13 +209,8 @@ nav_order: 2
     }
 
     .wk-paper {
-      grid-template-columns: 1fr;
-      padding: 1.15rem 1rem;
-    }
-
-    .wk-paper::before {
-      width: 1.75rem;
-      height: 1.75rem;
+      grid-template-columns: 34px minmax(0, 1fr);
+      padding: 1rem 0.9rem;
     }
 
     .wk-empty {

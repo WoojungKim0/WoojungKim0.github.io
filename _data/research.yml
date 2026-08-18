@@ -20,12 +20,29 @@ sections:
         year: "2025"
         publisher_url: https://doi.org/10.1016/j.asoc.2025.112748
         abstract_url: https://www.sciencedirect.com/science/article/abs/pii/S1568494625000596
-        # Replace abstract_excerpt with `abstract` after supplying the exact, author-approved full text.
-        # The same `abstract` field is used for both published and working papers.
-        abstract_excerpt: >-
-          Using time-series generative adversarial networks (TimeGAN), we augment
-          time-series data into three dimensions and employ a 3-dimensional convolutional
-          neural network (3DCNN).
+        abstract: >-
+          Over the past several years, a growing number of researchers and investors have
+          displayed a keen interest in predicting stock price movements, actively conducting
+          research that leverages cutting-edge deep learning models to capture the complexities
+          of the stock market. In contrast, research on predicting price movements in the
+          futures market, which is essential for risk management and forecasting the future
+          value of underlying assets, is nearly absent. In this study, we propose a robust and
+          efficient algorithmic trading model designed for the futures market, which exhibits
+          significant time-series volatility, similar to the stock market. We assess the model's
+          performance in both the Korean and U.S. markets. Using time-series generative
+          adversarial networks (TimeGAN), we augment time-series data into three dimensions and
+          employ a 3-dimensional convolutional neural network (3DCNN) to identify temporal
+          correlations within a multidimensional spatial structure. We thoroughly assess the
+          performance of the proposed model by subjecting it to rigorous backtesting within a
+          simulated environment that closely emulates real-world conditions in the futures
+          market. The results demonstrate improvements of approximately 1.35 times in
+          risk-adjusted returns and up to 6390 times in cost efficiency over both short- and
+          long-term timeframes. This demonstrates that the TimeGAN augmentation and 3D expansion
+          method outperforms existing methodologies in terms of risk-adjusted returns and cost
+          efficiency, effectively capturing the volatility of the futures market. The main
+          objective of this research is to provide investors with a more proficient
+          decision-making tool through algorithmic trading that seamlessly functions in the
+          real-world futures market.
         note: ""
 
   - id: working
