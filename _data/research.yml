@@ -49,4 +49,24 @@ sections:
   - id: working
     title: Working Papers
     empty_message: No working papers are listed for this field.
-    papers: []
+    papers:
+      - title: "Across the Capital Structure: Bond Signals and Equity Returns"
+        authors: "Jun Kyung Auh and Woojung Kim"
+        area: finance
+        status: "2026"
+        ssrn_url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7527218
+        abstract: >-
+          A firm's bonds and stocks are claims on the same business, but their prices need not
+          incorporate information at the same speed. We extract common return variation from
+          24 characteristic-sorted corporate bond portfolios and map the resulting signal to
+          the equities of the same issuers. In rolling out-of-sample tests, the bond-implied
+          equity portfolio earns an average excess return of 0.54% per month and a monthly
+          alpha of 0.65% relative to the Fama-French five factors and momentum. A
+          one-standard-deviation increase in the issuer-level signal predicts approximately
+          21 basis points higher next-month stock returns after controlling for stock
+          characteristics. Predictability survives conditional stock-factor models and
+          established return-spillover strategies, is stronger among smaller firms and issuers
+          with intermediate credit ratings, and attenuates at longer horizons. These findings
+          are consistent with gradual incorporation of bond-market information into equity
+          prices and show that jointly extracted bond signals predict equity returns beyond
+          established spillover benchmarks.
