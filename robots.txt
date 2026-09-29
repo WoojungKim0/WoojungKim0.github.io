@@ -5,3 +5,4 @@
 # 홈페이지 정식 공개
 User-agent: *
 Allow: /
+Sitemap: https://woojungkim0.github.io/sitemap.xml
